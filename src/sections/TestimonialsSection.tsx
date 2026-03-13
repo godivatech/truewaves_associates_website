@@ -50,14 +50,14 @@ export default function TestimonialsSection() {
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                 />
               </defs>
-              <text className="text-[7px] fill-dark uppercase tracking-widest">
+              <text className="text-[7px] fill-navy uppercase tracking-widest">
                 <textPath href="#testimonialCircle">
                   WHAT PEOPLE SAYS • WHAT PEOPLE SAYS •
                 </textPath>
               </text>
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-14 h-14 bg-lime rounded-full flex items-center justify-center overflow-hidden">
+              <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center overflow-hidden">
                 <img
                   src="/images/team-1.jpg"
                   alt=""
@@ -79,12 +79,12 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.4 }}
               className="text-center"
             >
-              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-medium text-dark leading-relaxed mb-8">
+              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-medium text-navy leading-relaxed mb-8">
                 "{testimonials[currentIndex].quote}"
               </blockquote>
               
               <div>
-                <p className="font-semibold text-dark">{testimonials[currentIndex].author}</p>
+                <p className="font-semibold text-navy">{testimonials[currentIndex].author}</p>
                 <p className="text-sm text-muted-foreground">{testimonials[currentIndex].role}</p>
               </div>
             </motion.div>
@@ -94,15 +94,15 @@ export default function TestimonialsSection() {
           <div className="flex justify-center gap-4 mt-10">
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-lime hover:border-lime transition-colors"
+              className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5 text-navy" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full border border-dark/20 flex items-center justify-center hover:bg-lime hover:border-lime transition-colors"
+              className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5 text-navy" />
             </button>
           </div>
         </div>

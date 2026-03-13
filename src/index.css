@@ -7,33 +7,31 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 66 70% 60%;
-    --primary-foreground: 0 0% 10%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 66 70% 60%;
-    --accent-foreground: 0 0% 10%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 199 95% 61%; /* #3ABEF9 - Brand Ocean */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 226 60% 10%; /* #0A1128 - Brand Navy */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 66 70% 60%; /* #D4E157 - Brand Lime */
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 66 70% 60%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 95% 61%;
     --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 26%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 66 70% 60%;
+
+    /* Brand Specific (Hex for reference) */
+    --brand-ocean: #3ABEF9;
+    --brand-navy: #0A1128;
+    --brand-lime: #D4E157;
+    --brand-ice: #F8FAFC;
   }
 }
 
@@ -80,16 +78,16 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4E157;
+  background: var(--brand-ocean);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5D147;
+  background: #30B0EB;
 }
 
 /* Selection color */
 ::selection {
-  background: #D4E157;
-  color: #1A1A1A;
+  background: var(--brand-lime);
+  color: #FFFFFF;
 }

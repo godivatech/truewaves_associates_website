@@ -108,14 +108,15 @@ export default function ServicesSection() {
           {/* Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <motion.span
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-lime rounded-full text-xs font-medium tracking-wider text-dark mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6"
               >
-                WHAT WE OFFER
-              </motion.span>
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                Our Expertise
+              </motion.div>
             </div>
             <div>
               <motion.h2
@@ -153,7 +154,8 @@ export default function ServicesSection() {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Reveal arrow on hover */}
-                  <div className="absolute bottom-4 right-4 w-10 h-10 bg-lime rounded-full flex items-center justify-center translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent transition-colors duration-500">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>

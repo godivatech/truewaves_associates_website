@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, Building2, Ruler, CheckCircle } from 'lucide-react';
 
 // ─── Animated Counter ─────────────────────────────────────────────────────────
@@ -73,8 +73,8 @@ const infoCards = [
     title: 'What we do',
     description: 'We maintain this by ensuring transparency and professional conduct in every aspect.',
     link: 'Our Solutions',
-    bgColor: 'bg-[#12140d]',
-    numberColor: 'text-lime',
+    bgColor: 'bg-navy',
+    numberColor: 'text-accent',
     buttonBg: 'bg-white',
     arrowColor: 'text-black',
     contentPosition: 'bottom'
@@ -84,8 +84,8 @@ const infoCards = [
     title: 'Our impact',
     description: 'We work with both investors and developers to create landmarks that make an impact.',
     link: 'See Projects',
-    bgColor: 'bg-[#d9e661]', // Brighter lime
-    numberColor: 'text-black/40',
+    bgColor: 'bg-primary', // Ocean Blue
+    numberColor: 'text-white/40',
     buttonBg: 'bg-white',
     arrowColor: 'text-black',
     image: '/images/construction-site.jpg',
@@ -96,9 +96,9 @@ const infoCards = [
     title: 'Core values',
     description: 'To empower businesses with cutting-edge web solutions that enhance their digital presence and drive growth.',
     link: 'Discover More',
-    bgColor: 'bg-[#1c1c1c]',
+    bgColor: 'bg-accent',
     numberColor: 'text-white/20',
-    buttonBg: 'bg-lime',
+    buttonBg: 'bg-white',
     arrowColor: 'text-black',
     image: '/images/innovation.jpg',
     contentPosition: 'top'
@@ -108,6 +108,15 @@ const infoCards = [
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function AboutSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start start", "end end"]
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const springX = useSpring(x, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
   return (
     <section id="about" className="bg-white">
       {/* ── Hero Banner ─────────────────────────────────────── */}
@@ -153,8 +162,8 @@ export default function AboutSection() {
               className="lg:mb-4 lg:text-right"
             >
               <div className="flex items-center lg:justify-end gap-3 text-white/70 text-sm font-medium tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-lime" />
-                Home <span className="text-lime">/</span> About Us
+                <span className="w-8 h-px bg-accent" />
+                Home <span className="text-accent">/</span> About Us
               </div>
               <p className="text-white/90 text-sm max-w-sm leading-relaxed uppercase tracking-wide">
                 Whether you're building, remodeling, buying, or selling, we bring seamless project execution under one roof.
@@ -166,7 +175,7 @@ export default function AboutSection() {
 
       {/* ── Main Content ────────────────────────────────────── */}
       <div className="bg-white rounded-t-[40px] -mt-10 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
 
           {/* Top: Heading + Description */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
@@ -175,16 +184,16 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-lime rounded-full text-xs font-medium tracking-wider text-dark mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark mb-6"
               >
-                ABOUT US
+                WE ARE <span className="text-accent">-</span> WHO WE ARE
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl lg:text-6xl font-bold text-dark leading-tight"
+                className="text-4xl lg:text-6xl font-bold text-navy leading-tight"
               >
                 Shaping the
                 <br />
@@ -200,7 +209,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl font-medium text-dark mb-4"
+                className="text-xl font-medium text-navy mb-4"
               >
                 We'd love to share more with you — our dedicated team is committed to
                 turning your vision into reality.
@@ -225,11 +234,11 @@ export default function AboutSection() {
                 href="#team"
                 className="inline-flex items-center gap-3 self-start"
               >
-                <span className="px-6 py-3 border border-dark/20 rounded-full text-sm font-medium text-dark">
+                <span className="relative px-6 py-3 border border-navy/20 rounded-full text-sm font-medium text-navy pr-16">
                   Meet The Team
-                </span>
-                <span className="w-10 h-10 bg-lime rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-4 h-4" />
+                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
                 </span>
               </motion.a>
             </div>
@@ -249,24 +258,24 @@ export default function AboutSection() {
               className="w-full h-[500px] object-cover"
             />
 
-            {/* Stats: top-right */}
+            {/* Floating Stats */}
             <div className="absolute top-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-start justify-between mb-2">
-                <div className="text-5xl font-bold text-dark">
+                <div className="text-5xl font-bold text-navy">
                   <AnimatedCounter target={40} suffix="+" />
                 </div>
-                <Building2 className="w-6 h-6 text-dark" />
+                <Building2 className="w-6 h-6 text-navy" />
               </div>
-              <p className="text-sm text-muted-foreground">projects in development</p>
+              <p className="text-sm text-gray-500">projects in development</p>
             </div>
 
             {/* Stats: bottom-center */}
             <div className="absolute bottom-8 left-1/3 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-start justify-between mb-2">
-                <div className="text-5xl font-bold text-dark">
+                <div className="text-5xl font-bold text-navy">
                   <AnimatedCounter target={18} suffix="m" />
                 </div>
-                <Ruler className="w-6 h-6 text-dark" />
+                <Ruler className="w-6 h-6 text-navy" />
               </div>
               <p className="text-sm text-muted-foreground">square feet of property</p>
             </div>
@@ -274,79 +283,88 @@ export default function AboutSection() {
             {/* Stats: bottom-right */}
             <div className="absolute bottom-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-start justify-between mb-2">
-                <div className="text-5xl font-bold text-dark">
+                <div className="text-5xl font-bold text-navy">
                   <AnimatedCounter target={2} suffix="b+" />
                 </div>
-                <CheckCircle className="w-6 h-6 text-dark" />
+                <CheckCircle className="w-6 h-6 text-navy" />
               </div>
-              <p className="text-sm text-muted-foreground">total projects cost</p>
+              <p className="text-sm text-gray-500">total projects cost</p>
             </div>
           </motion.div>
+        </div> {/* End of Upper Content max-w-7xl container */}
 
-          {/* Timeline */}
-          <div className="mb-20">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 border border-lime rounded-full text-xs font-medium tracking-wider text-dark mb-6"
-            >
-              OUR STORY
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold text-dark mb-16"
-            >
-              40+ years of a<br />remarkable journey
-            </motion.h2>
+        {/* Timeline Section with Horizontal Scroll */}
+        <section ref={scrollRef} className="relative h-[250vh] bg-white">
+          <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+            {/* Centered Header within Timeline Section */}
+            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-20">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 border border-accent rounded-full text-xs font-medium tracking-wider text-navy mb-6"
+              >
+                OUR STORY
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl lg:text-5xl font-bold text-dark"
+              >
+                40+ years of a<br />remarkable journey
+              </motion.h2>
+            </div>
 
-            <div className="relative">
-              {/* Horizontal rule */}
-              <div className="absolute top-[120px] left-0 right-0 h-px bg-lime" />
+            <div className="relative pt-20">
+              {/* Horizontal rule (Full Width) */}
+              <div className="absolute top-[120px] left-0 right-0 h-px bg-accent/30" />
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              <motion.div
+                style={{ x: springX }}
+                className="flex gap-8 sm:gap-16 px-4 sm:px-6 lg:px-8"
+              >
                 {timelineData.map((item, index) => (
                   <motion.div
                     key={item.year}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center"
+                    className="flex-shrink-0 w-[280px] sm:w-[350px] text-center"
                   >
-                    <div className="text-4xl lg:text-5xl font-bold text-lime mb-4">
+                    <div className="text-4xl lg:text-5xl font-bold text-accent mb-4">
                       {item.year}
                     </div>
-                    <div className="relative h-[100px] mb-8">
+                    <div className="relative h-[120px] mb-8 flex items-center justify-center">
                       <img
                         src={item.image}
                         alt={`Timeline ${item.year}`}
-                        className="w-full h-full object-contain"
+                        className="max-w-full max-h-full object-contain"
                       />
-                      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-lime rounded-full" />
+                      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm" />
                     </div>
-                    <p className="text-sm text-muted-foreground px-2">{item.text}</p>
+                    <p className="text-sm text-muted-foreground px-4 leading-relaxed">{item.text}</p>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
+        </section>
+
+        {/* Lower Content Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
 
           {/* Learn More Cards */}
           <div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-7xl font-light text-dark leading-[1.1] tracking-tight"
-            >
-              Learn more <br />
-              <span className="font-bold">about us</span>
-            </motion.h2>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl lg:text-7xl font-light text-navy leading-[1.1] tracking-tight"
+              >
+                Learn more <br />
+                <span className="font-bold">about us</span>
+              </motion.h2>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -371,19 +389,19 @@ export default function AboutSection() {
                     {/* Card Header: Number and Line */}
                     <div className="mb-8">
                       <span className={`text-[15px] font-bold ${card.numberColor} block mb-6`}>{card.id}</span>
-                      <div className={`h-[1px] w-full ${card.bgColor.includes('lime') ? 'bg-black/10' : 'bg-white/10'}`} />
+                      <div className={`h-[1px] w-full ${card.bgColor.includes('accent') ? 'bg-black/10' : 'bg-white/10'}`} />
                     </div>
 
                     {/* Flex Content Container */}
                     <div className={`flex-1 flex flex-col ${card.contentPosition === 'bottom' ? 'justify-end pb-16' : 'justify-start pt-4'}`}>
                       <div className="relative z-10">
-                        <h3 className={`text-[40px] md:text-[52px] font-bold mb-8 leading-[1.1] tracking-tight ${card.bgColor.includes('lime') ? 'text-black' : 'text-white'}`}>
+                        <h3 className={`text-[40px] md:text-[52px] font-bold mb-8 leading-[1.1] tracking-tight ${card.bgColor.includes('accent') ? 'text-black' : 'text-white'}`}>
                           {card.title}
                         </h3>
-                        <p className={`text-[16px] leading-[1.6] mb-12 max-w-[310px] ${card.bgColor.includes('lime') ? 'text-black/70' : 'text-white/70'}`}>
+                        <p className={`text-[16px] leading-[1.6] mb-12 max-w-[310px] ${card.bgColor.includes('accent') ? 'text-black/70' : 'text-white/70'}`}>
                           {card.description}
                         </p>
-                        <a href="#" className={`text-[14px] font-bold uppercase tracking-wider underline underline-offset-[16px] decoration-2 transition-opacity hover:opacity-70 ${card.bgColor.includes('lime') ? 'text-black' : 'text-white'}`}>
+                        <a href="#" className={`text-[14px] font-bold uppercase tracking-wider underline underline-offset-[16px] decoration-2 transition-opacity hover:opacity-70 ${card.bgColor.includes('accent') ? 'text-black' : 'text-white'}`}>
                           {card.link}
                         </a>
                       </div>
@@ -392,9 +410,9 @@ export default function AboutSection() {
                     {/* Image Section for Cards 02 & 03 (Aligned to Bottom) */}
                     {card.image && (
                       <div className="absolute bottom-0 right-0 w-[85%] h-[40%] overflow-hidden">
-                        <img 
-                          src={card.image} 
-                          alt={card.title} 
+                        <img
+                          src={card.image}
+                          alt={card.title}
                           className="w-full h-full object-cover rounded-tl-[48px] grayscale contrast-[1.1]"
                         />
                       </div>
@@ -413,7 +431,7 @@ export default function AboutSection() {
 
                       {/* The Button Container (White square with rounded-tl) */}
                       <div className="w-[124px] h-[124px] bg-white rounded-tl-[48px] flex items-center justify-center pt-3 pl-3">
-                        <div className={`w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg ${card.id === '01.' ? 'bg-black text-white' : 'bg-lime text-black'}`}>
+                        <div className={`w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg ${card.id === '01.' ? 'bg-primary text-white' : 'bg-accent text-navy'}`}>
                           <ArrowUpRight className="w-8 h-8" />
                         </div>
                       </div>

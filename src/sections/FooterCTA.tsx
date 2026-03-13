@@ -60,7 +60,7 @@ export default function FooterCTA() {
         >
           <a
             href="#contact"
-            className="w-32 h-32 bg-dark-light/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-sm font-medium text-center leading-tight hover:bg-dark transition-colors"
+            className="w-32 h-32 bg-navy-light/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-sm font-medium text-center leading-tight hover:bg-navy transition-colors"
           >
             Get Your
             <br />

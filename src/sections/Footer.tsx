@@ -28,7 +28,7 @@ const socialLinks = [
 
 export default function Footer() {
     return (
-        <footer className="relative bg-dark px-4 sm:px-6 lg:px-8 pb-8 pt-12">
+        <footer className="relative bg-navy px-4 sm:px-6 lg:px-8 pb-8 pt-12">
             {/* Main Footer Card */}
             <div className="max-w-[1400px] mx-auto relative z-10">
                 <motion.div
@@ -43,9 +43,9 @@ export default function Footer() {
                         <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
                             <a href="#" className="flex items-center gap-3">
                                 <div className="relative w-8 h-8">
-                                    <div className="absolute inset-0 bg-lime rounded-md transform rotate-45" />
+                                    <div className="absolute inset-0 bg-accent rounded-md transform rotate-45" />
                                 </div>
-                                <span className="text-2xl font-bold text-dark tracking-tight">TrueWaves</span>
+                                <span className="text-2xl font-bold text-navy tracking-tight">TrueWaves</span>
                             </a>
                             <div className="mt-16 sm:mt-24">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
@@ -61,7 +61,7 @@ export default function Footer() {
                                     <li key={link.name}>
                                         <a
                                             href={link.href}
-                                            className="text-[15px] font-bold text-dark hover:text-lime-dark transition-colors"
+                                            className="text-[15px] font-bold text-navy hover:text-accent transition-colors"
                                         >
                                             {link.name}
                                         </a>
@@ -77,7 +77,7 @@ export default function Footer() {
                                     <li key={link.name}>
                                         <a
                                             href={link.href}
-                                            className="text-[15px] font-bold text-dark hover:text-lime-dark transition-colors"
+                                            className="text-[15px] font-bold text-navy hover:text-accent transition-colors"
                                         >
                                             {link.name}
                                         </a>
@@ -91,13 +91,13 @@ export default function Footer() {
                             <div>
                                 <a
                                     href="tel:+919487525226"
-                                    className="block text-[28px] font-bold text-dark hover:text-lime-dark transition-colors mb-4 border-b border-lime pb-2 inline-block max-w-max"
+                                    className="block text-[28px] font-bold text-navy hover:text-accent transition-colors mb-4 border-b border-accent pb-2 inline-block max-w-max"
                                 >
                                     +91 9487525226
                                 </a>
                                 <a
                                     href="mailto:sanjay@truewavesgroup.com"
-                                    className="block text-[22px] font-bold text-dark hover:text-lime-dark transition-colors mb-6 border-b border-lime pb-2 inline-block max-w-max"
+                                    className="block text-[22px] font-bold text-navy hover:text-accent transition-colors mb-6 border-b border-accent pb-2 inline-block max-max"
                                 >
                                     sanjay@truewavesgroup.com
                                 </a>
@@ -112,7 +112,7 @@ export default function Footer() {
                                     <div key={social.name} className="flex items-center gap-3">
                                         <a
                                             href={social.href}
-                                            className="hover:text-dark transition-colors"
+                                            className="hover:text-navy transition-colors"
                                             aria-label={social.name}
                                         >
                                             {social.name}
@@ -129,7 +129,7 @@ export default function Footer() {
                     {/* Copyright */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
                         <p className="text-[15px] text-muted-foreground font-medium">
-                            © 2026 <span className="text-dark font-bold">TrueWaves</span>. All Rights Reserved.
+                            © 2026 <span className="text-navy font-bold">TrueWaves</span>. All Rights Reserved.
                         </p>
                     </div>
                 </motion.div>

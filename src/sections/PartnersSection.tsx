@@ -47,13 +47,13 @@ export default function PartnersSection() {
                 <div className="relative">
                   {partner.name === 'ME&DEN' && (
                     <div className="font-bold text-xl tracking-tight">
-                      ME<span className="text-lime">&</span>DEN
+                      ME<span className="text-accent">&</span>DEN
                     </div>
                   )}
                   {partner.name === 'ARCHITECTURE' && (
                     <div className="flex items-center gap-1">
-                      <div className="w-6 h-8 border-2 border-dark flex items-end justify-center">
-                        <div className="w-4 h-5 bg-dark" />
+                      <div className="w-6 h-8 border-2 border-navy flex items-end justify-center">
+                        <div className="w-4 h-5 bg-navy" />
                       </div>
                       <span className="text-xs font-medium">ARCHITECTURE</span>
                     </div>
@@ -62,12 +62,12 @@ export default function PartnersSection() {
                     <div className="flex flex-col items-center">
                       <div className="flex gap-0.5">
                         {[...Array(3)].map((_, i) => (
-                          <div key={i} className="w-3 h-2 bg-dark rounded-sm" />
+                          <div key={i} className="w-3 h-2 bg-navy rounded-sm" />
                         ))}
                       </div>
                       <div className="flex gap-0.5 mt-0.5">
                         {[...Array(2)].map((_, i) => (
-                          <div key={i} className="w-3 h-2 bg-dark rounded-sm" />
+                          <div key={i} className="w-3 h-2 bg-navy rounded-sm" />
                         ))}
                       </div>
                       <span className="text-xs font-bold mt-1">BRICK</span>
@@ -75,23 +75,23 @@ export default function PartnersSection() {
                   )}
                   {partner.name === 'CONSTRUCTION' && (
                     <div className="flex items-center gap-1">
-                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[16px] border-b-dark" />
+                      <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[16px] border-b-navy" />
                       <span className="text-xs font-bold">CONSTRUCTION</span>
                     </div>
                   )}
                   {partner.name === 'ARCHITECT' && (
                     <div className="flex flex-col items-center">
                       <div className="flex gap-1">
-                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[12px] border-b-dark" />
-                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[12px] border-b-dark" />
+                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[12px] border-b-navy" />
+                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[12px] border-b-navy" />
                       </div>
                       <span className="text-xs font-bold mt-1">ARCHITECT</span>
                     </div>
                   )}
                   {partner.name === 'HOME BUILD' && (
                     <div className="flex items-center gap-1">
-                      <div className="w-6 h-6 border-2 border-dark rounded-sm flex items-center justify-center">
-                        <div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-dark" />
+                      <div className="w-6 h-6 border-2 border-navy rounded-sm flex items-center justify-center">
+                        <div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-navy" />
                       </div>
                       <div className="text-xs">
                         <div className="font-bold leading-tight">HOME</div>
@@ -101,7 +101,7 @@ export default function PartnersSection() {
                   )}
                   {partner.name === 'HOMEGARD' && (
                     <div className="font-bold text-xl">
-                      HO<span className="text-lime">M</span>EGARD
+                      HO<span className="text-accent">M</span>EGARD
                     </div>
                   )}
                 </div>

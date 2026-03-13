@@ -108,10 +108,10 @@ export default function HeroSection() {
                         >
                             <a
                                 href="#services"
-                                className="group inline-flex items-center gap-3 px-6 py-3 bg-white text-dark rounded-full font-medium hover:bg-lime transition-colors"
+                                className="group inline-flex items-center gap-3 px-6 py-3 bg-white text-navy rounded-full font-medium hover:bg-accent transition-colors"
                             >
                                 View Services
-                                <span className="w-8 h-8 bg-lime group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                                <span className="w-8 h-8 bg-accent group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
                                     <ArrowRight className="w-4 h-4" />
                                 </span>
                             </a>
@@ -133,8 +133,8 @@ export default function HeroSection() {
                                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                                 className="glass rounded-2xl p-6"
                             >
-                                <div className="w-10 h-10 bg-lime rounded-lg flex items-center justify-center mb-4">
-                                    <card.icon className="w-5 h-5 text-dark" />
+                                <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mb-4">
+                                    <card.icon className="w-5 h-5 text-navy" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-white mb-2">{card.title}</h3>
                                 <p className="text-sm text-white/70">{card.description}</p>

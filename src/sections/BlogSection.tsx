@@ -50,14 +50,14 @@ function BlogCard({ title, category, date, image, index }: BlogCardProps) {
 
       {/* Meta */}
       <div className="flex items-center gap-3 mb-3">
-        <span className="px-3 py-1 bg-lime rounded-full text-xs font-medium text-dark">
+        <span className="px-3 py-1 bg-accent rounded-full text-xs font-medium text-navy">
           {category}
         </span>
         <span className="text-sm text-muted-foreground">{date}</span>
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-semibold text-dark group-hover:text-lime-dark transition-colors">
+      <h3 className="text-lg font-semibold text-navy group-hover:text-accent transition-colors">
         {title}
       </h3>
     </motion.article>
@@ -78,8 +78,8 @@ export default function BlogSection() {
               transition={{ duration: 0.5 }}
               className="mb-4"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
-                INSIGHTS <span className="text-lime">-</span> ARTICLES & NEWS
+              <span className="inline-flex items-center gap-2 px-4 py-2 border border-navy/20 rounded-full text-xs font-medium tracking-wider text-navy">
+                INSIGHTS <span className="text-accent">-</span> ARTICLES & NEWS
               </span>
             </motion.div>
 
@@ -88,7 +88,7 @@ export default function BlogSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy"
             >
               Discover inspiration
               <br />
@@ -102,10 +102,10 @@ export default function BlogSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             href="#"
-            className="group inline-flex items-center gap-3 px-5 py-2.5 border border-dark/20 rounded-full text-sm font-medium text-dark hover:bg-dark hover:text-white transition-colors"
+            className="group inline-flex items-center gap-3 px-5 py-2.5 border border-navy/20 rounded-full text-sm font-medium text-navy hover:bg-navy hover:text-white transition-colors"
           >
             View All Posts
-            <span className="w-8 h-8 bg-lime group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
+            <span className="w-8 h-8 bg-accent group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
               <ArrowUpRight className="w-4 h-4" />
             </span>
           </motion.a>

@@ -31,7 +31,7 @@ export default function DifferentSection() {
           transition={{ duration: 0.5 }}
           className="mb-8 flex justify-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
+          <span className="inline-flex items-center gap-2 px-4 py-2 border border-navy/20 rounded-full text-xs font-medium tracking-wider text-navy">
             OUR COMMITMENT
           </span>
         </motion.div>
@@ -61,11 +61,11 @@ export default function DifferentSection() {
                 className="absolute bottom-6 left-6 right-6 glass-dark rounded-2xl p-6"
               >
                 <div className="flex items-center gap-4">
-                  <div className="text-5xl font-bold text-lime">4.9</div>
+                  <div className="text-5xl font-bold text-accent">4.9</div>
                   <div>
                     <div className="flex gap-1 mb-1">
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-lime fill-current" viewBox="0 0 20 20">
+                        <svg key={i} className="w-4 h-4 text-accent text-accent" viewBox="0 0 20 20">
                           <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                         </svg>
                       ))}
@@ -74,7 +74,7 @@ export default function DifferentSection() {
                       {[1, 2, 3].map((i) => (
                         <div
                           key={i}
-                          className="w-8 h-8 rounded-full bg-gradient-to-br from-lime to-lime-dark border-2 border-white"
+                          className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/90 border-2 border-white"
                         />
                       ))}
                     </div>
@@ -100,14 +100,14 @@ export default function DifferentSection() {
                       d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                     />
                   </defs>
-                  <text className="text-[8px] fill-dark uppercase tracking-widest">
+                  <text className="text-[8px] fill-navy uppercase tracking-widest">
                     <textPath href="#circlePath">
                       WHAT PEOPLE SAYS • WHAT PEOPLE SAYS •
                     </textPath>
                   </text>
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
@@ -124,7 +124,7 @@ export default function DifferentSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-6"
             >
               What makes us different
             </motion.h2>
@@ -151,11 +151,11 @@ export default function DifferentSection() {
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   className="flex gap-4 pb-6 border-b border-border last:border-0"
                 >
-                  <div className="w-12 h-12 bg-lime rounded-full flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-dark" />
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-5 h-5 text-navy" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-dark mb-1">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold text-navy mb-1">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 </motion.div>

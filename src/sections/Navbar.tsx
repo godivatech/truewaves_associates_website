@@ -47,10 +47,10 @@ export default function Navbar() {
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-lime rounded-xl flex items-center justify-center">
-                            <span className="text-dark font-bold text-xl">T</span>
+                        <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
+                            <span className="text-navy font-bold text-xl">T</span>
                         </div>
-                        <span className="text-2xl font-bold tracking-tight text-dark">
+                        <span className="text-2xl font-bold tracking-tight text-navy">
                             TrueWaves
                         </span>
                     </Link>
@@ -62,14 +62,14 @@ export default function Navbar() {
                                 {link.href.startsWith('/') && !link.href.includes('#') ? (
                                     <Link
                                         to={link.href}
-                                        className="flex items-center gap-1 text-sm font-medium text-[#1a1a1a] hover:text-lime transition-colors"
+                                        className="flex items-center gap-1 text-sm font-medium text-navy hover:text-accent transition-colors"
                                     >
                                         {link.name}
                                     </Link>
                                 ) : (
                                     <a
                                         href={link.href}
-                                        className="flex items-center gap-1 text-sm font-medium text-[#1a1a1a] hover:text-lime transition-colors"
+                                        className="flex items-center gap-1 text-sm font-medium text-navy hover:text-accent transition-colors"
                                     >
                                         {link.name}
                                     </a>
@@ -82,13 +82,13 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center gap-6">
                         <a
                             href="tel:+919487525226"
-                            className="flex items-center gap-2 text-sm text-[#1a1a1a] hover:text-lime transition-colors"
+                            className="flex items-center gap-2 text-sm text-navy hover:text-accent transition-colors"
                         >
                             <span className="text-muted-foreground">Call Us:</span>
                             <span className="underline underline-offset-2">+(91) 9487525226</span>
                         </a>
                         <button
-                            className="px-6 py-2.5 bg-lime text-dark text-sm font-semibold rounded-full hover:bg-lime-dark transition-all transform hover:scale-105"
+                            className="px-6 py-2.5 bg-accent text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-all transform hover:scale-105"
                         >
                             Get In Touch
                         </button>
@@ -97,7 +97,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="lg:hidden p-2 text-[#1a1a1a]"
+                        className="lg:hidden p-2 text-navy"
                     >
                         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -118,7 +118,7 @@ export default function Navbar() {
                                         {link.href.startsWith('/') && !link.href.includes('#') ? (
                                             <Link
                                                 to={link.href}
-                                                className="block px-4 py-3 text-[#1a1a1a] hover:bg-lime/10 rounded-lg transition-colors font-medium"
+                                                className="block px-4 py-3 text-navy hover:bg-accent/10 rounded-lg transition-colors font-medium"
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                             >
                                                 {link.name}
@@ -126,7 +126,7 @@ export default function Navbar() {
                                         ) : (
                                             <a
                                                 href={link.href}
-                                                className="block px-4 py-3 text-[#1a1a1a] hover:bg-lime/10 rounded-lg transition-colors font-medium"
+                                                className="block px-4 py-3 text-navy hover:bg-accent/10 rounded-lg transition-colors font-medium"
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                             >
                                                 {link.name}
@@ -136,7 +136,7 @@ export default function Navbar() {
                                 ))}
                                 <div className="pt-4 border-t">
                                     <button
-                                        className="w-full px-4 py-3 bg-lime text-dark text-center font-semibold rounded-lg"
+                                        className="w-full px-4 py-3 bg-accent text-navy text-center font-semibold rounded-lg"
                                     >
                                         Get In Touch
                                     </button>

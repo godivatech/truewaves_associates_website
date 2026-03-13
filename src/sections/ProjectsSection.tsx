@@ -33,8 +33,8 @@ export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(0);
 
   return (
-    <section id="projects" className="relative min-h-screen bg-dark-light">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+    <section id="projects" className="relative min-h-screen bg-navy">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen border-t border-white/10">
         {/* Left Panel - Project List */}
         <div className="relative z-10 p-8 lg:p-16 flex flex-col justify-center">
           {/* Label */}
@@ -124,7 +124,7 @@ export default function ProjectsSection() {
           </AnimatePresence>
           
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-light/80 via-transparent to-transparent lg:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-transparent to-transparent lg:hidden" />
         </div>
       </div>
     </section>

@@ -124,10 +124,10 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="lg:mb-4 lg:text-right"
             >
-              <div className="flex items-center lg:justify-end gap-3 text-white/70 text-sm font-medium tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-lime" />
-                Home <span className="text-lime">/</span> Projects
-              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6">
+                        <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                        Featured Projects
+                    </div>
               <p className="text-white/90 text-sm max-w-sm leading-relaxed uppercase tracking-wide">
                 Explore our portfolio of landmark developments and architectural excellence across the region.
               </p>
@@ -145,22 +145,21 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-100"
+            className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-100 relative"
           >
             {filterOptions.map((filter) => (
               <div key={filter.key} className="relative">
                 <select
                   aria-label={filter.label}
-                  className="appearance-none bg-gray-50 px-6 py-3 pr-10 rounded-full text-sm text-dark focus:outline-none focus:ring-2 focus:ring-lime cursor-pointer"
+                  className="appearance-none bg-gray-50 px-6 py-3 pr-10 rounded-full text-sm text-dark focus:outline-none focus:ring-2 focus:ring-accent transition-colors cursor-pointer"
                   value={filters[filter.key]}
                   onChange={(e) =>
                     setFilters((prev) => ({ ...prev, [filter.key]: e.target.value }))
                   }
                 >
-                  <option value={filter.options[0]}>{filter.label}</option>
                   {filter.options.map((opt) => (
                     <option key={opt} value={opt}>
-                      {opt}
+                      {opt === 'All' ? filter.label : opt}
                     </option>
                   ))}
                 </select>
@@ -169,7 +168,7 @@ export default function ProjectsSection() {
             ))}
             <button
               onClick={() => setFilters({ status: 'All', type: 'All', location: 'All', budget: 'All' })}
-              className="px-8 py-3 bg-lime text-dark text-sm font-semibold rounded-full hover:bg-lime-dark transition-colors"
+              className="px-8 py-3 bg-accent text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-colors shadow-lg shadow-accent/10"
             >
               Reset
             </button>

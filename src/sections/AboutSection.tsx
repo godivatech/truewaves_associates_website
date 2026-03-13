@@ -55,7 +55,7 @@ export default function AboutSection() {
                     className="mb-8"
                 >
                     <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
-                        WE ARE <span className="text-lime">-</span> WHO WE ARE
+                        WE ARE <span className="text-accent">-</span> WHO WE ARE
                     </span>
                 </motion.div>
 

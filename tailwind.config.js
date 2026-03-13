@@ -11,13 +11,13 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#D4E157",
-          dark: "#C5D147",
-          foreground: "#1A1A1A",
+          DEFAULT: "var(--brand-ocean)",
+          dark: "#30B0EB",
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--brand-navy)",
+          foreground: "#FFFFFF",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
@@ -28,8 +28,8 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--brand-lime)",
+          foreground: "#1A1A1A",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -39,13 +39,13 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        lime: {
-          DEFAULT: "#D4E157",
-          dark: "#C5D147",
-        },
+        ocean: "#3ABEF9",
+        navy: "#0A1128",
+        lime: "#D4E157",
+        ice: "#F8FAFC",
         dark: {
-          DEFAULT: "#1A1A1A",
-          light: "#0D0D0D",
+          DEFAULT: "#0A1128",
+          light: "#1e293b",
         },
         cream: "#F5F5F0",
       },

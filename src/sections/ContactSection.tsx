@@ -39,13 +39,13 @@ export default function ContactSection() {
         >
           {/* Label */}
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
+            <span className="inline-flex items-center gap-2 px-4 py-2 border border-navy/20 rounded-full text-xs font-medium tracking-wider text-navy">
               QUICK ENQUIRY
             </span>
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-dark text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-navy text-center mb-8">
             Get specialist advice for residential, commercial or property
           </h2>
 
@@ -59,7 +59,7 @@ export default function ContactSection() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-lime text-dark placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
                 />
               </div>
               <div>
@@ -69,7 +69,7 @@ export default function ContactSection() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-lime text-dark placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
                 />
               </div>
             </div>
@@ -82,14 +82,14 @@ export default function ContactSection() {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-lime text-dark placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
                 />
               </div>
               <div>
                 <select
                   value={formData.inquiry}
                   onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-lime text-dark"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy"
                 >
                   <option value="">You inquiry about...</option>
                   <option value="residential">Residential Property</option>
@@ -109,7 +109,7 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="group inline-flex items-center gap-3 px-6 py-3 bg-lime text-dark rounded-full font-medium hover:bg-lime-dark transition-colors"
+                className="group inline-flex items-center gap-3 px-6 py-3 bg-accent text-navy rounded-full font-medium hover:bg-accent/90 transition-colors"
               >
                 Get A Call Back
                 <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center transition-colors">

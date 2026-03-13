@@ -48,8 +48,8 @@ function TeamCard({ name, role, image, index }: TeamCardProps) {
                 </div>
 
                 {/* Arrow button */}
-                <div className="absolute top-4 right-4 w-10 h-10 bg-lime rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform cursor-pointer">
-                    <ArrowUpRight className="w-5 h-5 text-dark" />
+                <div className="absolute top-4 right-4 w-10 h-10 bg-accent rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform cursor-pointer">
+                    <ArrowUpRight className="w-5 h-5 text-navy" />
                 </div>
 
                 {/* Info overlay */}
@@ -77,7 +77,7 @@ export default function TeamSection() {
                         transition={{ duration: 0.5 }}
                         className="mb-6"
                     >
-                        <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 border border-navy/20 rounded-full text-xs font-medium tracking-wider text-navy">
                             MEET THE TEAM
                         </span>
                     </motion.div>
@@ -87,7 +87,7 @@ export default function TeamSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark"
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy"
                     >
                         Global executive
                         <br />
