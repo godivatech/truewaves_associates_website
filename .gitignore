@@ -25,3 +25,7 @@ dist-ssr
 
 # Project specific
 public/mockServiceWorker.js
+#env
+.env
+.env.local
+.env.production
