@@ -5,17 +5,17 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const testimonials = [
   {
     quote: "They knew what they were doing and were incredibly knowledgeable throughout the process. A wonderful!",
-    author: "Esther Howard",
+    author: "Lakshmi Narayanan",
     role: "Assistant Project Manager",
   },
   {
     quote: "A wonderful experience! They knew what they were doing and were incredibly knowledgeable throughout the process.",
-    author: "John McConnor",
+    author: "Arumugam P.",
     role: "Senior Marketing Manager",
   },
   {
     quote: "The team exceeded our expectations in every way. Their attention to detail and commitment to quality is unmatched.",
-    author: "Sarah Mitchell",
+    author: "Kavitha Selvam",
     role: "Property Investor",
   },
 ];

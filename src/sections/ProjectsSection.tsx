@@ -5,26 +5,26 @@ import { MapPin } from 'lucide-react';
 const projects = [
   {
     number: '01',
-    location: 'Bay Shore, NY',
-    title: 'Apartment Building',
+    location: 'Chennai, Tamil Nadu',
+    title: 'Skyline Residency',
     image: '/images/project-1.jpg',
   },
   {
     number: '02',
-    location: 'Huntsville, Alabama',
-    title: 'Eden Estate',
+    location: 'Coimbatore, Tamil Nadu',
+    title: 'Emerald Gardenia',
     image: '/images/project-2.jpg',
   },
   {
     number: '03',
-    location: 'Bay Shore, NY',
-    title: 'Vista at Council Square',
+    location: 'Madurai, Tamil Nadu',
+    title: 'Pearl City Heights',
     image: '/images/project-3.jpg',
   },
   {
     number: '04',
-    location: 'Phoenix, AZ',
-    title: 'Office Building',
+    location: 'Chennai, Tamil Nadu',
+    title: 'Tech Wave Plaza',
     image: '/images/project-4.jpg',
   },
 ];

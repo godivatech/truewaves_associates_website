@@ -17,38 +17,38 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Mixed-Use Development',
-    location: 'New York, NY',
+    title: 'Metro Junction Mall',
+    location: 'Chennai, Tamil Nadu',
     status: 'COMPLETED',
     image: '/images/Projects/1.jpg.jpeg',
   },
   {
-    title: 'Greenview Apartments',
-    location: 'Hollywood, Florida',
+    title: 'Kovai Greenview',
+    location: 'Coimbatore, Tamil Nadu',
     status: 'UNDER CONSTRUCTION',
     image: '/images/project-2.jpg',
   },
   {
-    title: 'Premier Office Tower',
-    location: 'Spotswood, NJ',
+    title: 'Delta Business Tower',
+    location: 'Trichy, Tamil Nadu',
     status: 'COMPLETED',
     image: '/images/project-3.jpg',
   },
   {
-    title: 'Urban Heights Residence',
-    location: 'New York, NY',
+    title: 'Heritage Skyline',
+    location: 'Salem, Tamil Nadu',
     status: 'UNDER CONSTRUCTION',
     image: '/images/project-4.jpg',
   },
   {
-    title: 'Apartment Building',
-    location: 'Bay Shore, NY',
+    title: 'Skyline Residency',
+    location: 'Chennai, Tamil Nadu',
     status: 'UNDER CONSTRUCTION',
     image: '/images/project-1.jpg',
   },
   {
-    title: 'Commercial & Residential Building',
-    location: 'Spotswood, NJ',
+    title: 'Delta Mixed-Use',
+    location: 'Trichy, Tamil Nadu',
     status: 'COMPLETED',
     image: '/images/project-3.jpg',
   },
@@ -57,7 +57,7 @@ const projects: Project[] = [
 const filterOptions = [
   { key: 'status', label: 'Project Status', options: ['All', 'Completed', 'Under Construction'] },
   { key: 'type', label: 'Project Type', options: ['All', 'Residential', 'Commercial', 'Mixed-Use'] },
-  { key: 'location', label: 'Project Location', options: ['All', 'New York', 'Florida', 'New Jersey'] },
+  { key: 'location', label: 'Project Location', options: ['All', 'Chennai', 'Coimbatore', 'Trichy', 'Salem'] },
   { key: 'budget', label: 'Project Budget', options: ['All', 'Under $1M', '$1M - $5M', '$5M+'] },
 ] as const;
 
