@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowUpRight, Building2, Ruler, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, Building2, CheckCircle } from 'lucide-react';
 
 // ─── Animated Counter ─────────────────────────────────────────────────────────
 
@@ -258,37 +258,56 @@ export default function AboutSection() {
               className="w-full h-[500px] object-cover"
             />
 
-            {/* Floating Stats */}
+            {/* Floating Stats: top-left (Years of Exp) */}
+            <div className="absolute top-8 left-8 bg-white rounded-2xl p-6 shadow-xl">
+              <div className="flex items-start justify-between mb-2 gap-4">
+                <div className="text-5xl font-bold text-navy">
+                  <AnimatedCounter target={18} />
+                </div>
+                <div className="mt-2 p-2 bg-accent/20 rounded-lg">
+                  <Building2 className="w-6 h-6 text-navy" />
+                </div>
+              </div>
+              <p className="text-sm text-gray-500 font-medium">Years of experience</p>
+            </div>
+
+            {/* Floating Stats: top-right (Ongoing) */}
             <div className="absolute top-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
-              <div className="flex items-start justify-between mb-2">
+              <div className="flex items-start justify-between mb-2 gap-4">
                 <div className="text-5xl font-bold text-navy">
-                  <AnimatedCounter target={40} suffix="+" />
+                  <AnimatedCounter target={9} />
                 </div>
-                <Building2 className="w-6 h-6 text-navy" />
+                <div className="mt-2 p-2 bg-navy/10 rounded-lg">
+                  <CheckCircle className="w-6 h-6 text-navy" />
+                </div>
               </div>
-              <p className="text-sm text-gray-500">projects in development</p>
+              <p className="text-sm text-gray-500 font-medium">Ongoing projects</p>
             </div>
 
-            {/* Stats: bottom-center */}
-            <div className="absolute bottom-8 left-1/3 bg-white rounded-2xl p-6 shadow-xl">
-              <div className="flex items-start justify-between mb-2">
+            {/* Stats: bottom-left (Completed) */}
+            <div className="absolute bottom-8 left-8 bg-white rounded-2xl p-6 shadow-xl">
+              <div className="flex items-start justify-between mb-2 gap-4">
                 <div className="text-5xl font-bold text-navy">
-                  <AnimatedCounter target={18} suffix="m" />
+                  <AnimatedCounter target={122} />
                 </div>
-                <Ruler className="w-6 h-6 text-navy" />
+                <div className="mt-2 p-2 bg-primary/10 rounded-lg">
+                  <Building2 className="w-6 h-6 text-navy" />
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">square feet of property</p>
+              <p className="text-sm text-gray-500 font-medium font-medium">Completed projects</p>
             </div>
 
-            {/* Stats: bottom-right */}
+            {/* Stats: bottom-right (Clients) */}
             <div className="absolute bottom-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
-              <div className="flex items-start justify-between mb-2">
+              <div className="flex items-start justify-between mb-2 gap-4">
                 <div className="text-5xl font-bold text-navy">
-                  <AnimatedCounter target={2} suffix="b+" />
+                  <AnimatedCounter target={122} />
                 </div>
-                <CheckCircle className="w-6 h-6 text-navy" />
+                <div className="mt-2 p-2 bg-accent/20 rounded-lg">
+                  <CheckCircle className="w-6 h-6 text-navy" />
+                </div>
               </div>
-              <p className="text-sm text-gray-500">total projects cost</p>
+              <p className="text-sm text-gray-500 font-medium">Happy clients</p>
             </div>
           </motion.div>
         </div> {/* End of Upper Content max-w-7xl container */}

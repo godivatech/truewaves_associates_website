@@ -79,7 +79,7 @@ export default function HeroSection() {
                         variants={itemVariants}
                         className="mt-6 text-lg text-white/80 max-w-2xl mx-auto"
                     >
-                        Over 15 years' experience as practicing civil engineers as project management, techno-legal consultants, Valuer for banks and class 1 constructor
+                        Over 18 years' experience as practicing civil engineers as project management, techno-legal consultants, Valuer for banks and class 1 constructor
                     </motion.p>
                 </motion.div>
             </div>
