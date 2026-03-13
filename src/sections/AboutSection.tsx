@@ -37,9 +37,9 @@ function AnimatedCounter({ target, suffix = '', duration = 2000 }: CounterProps)
 }
 
 const stats = [
-    { label: 'GLOBAL REACH', sublabel: 'offices worldwide', value: 85, suffix: '+' },
-    { label: 'LOCAL EXPERTISE', sublabel: 'employees', value: 1500, suffix: '+' },
-    { label: 'OUR IMPACT', sublabel: 'projects done', value: 248, suffix: '+' },
+    { label: 'EXPERIENCE', sublabel: 'years in industry', value: 18, suffix: '+' },
+    { label: 'COMPLETED', sublabel: 'projects delivered', value: 122, suffix: '+' },
+    { label: 'ONGOING', sublabel: 'active projects', value: 9, suffix: '+' },
 ];
 
 export default function AboutSection() {
@@ -69,7 +69,7 @@ export default function AboutSection() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark leading-tight"
                         >
-                            The largest privately held real estate investors and managers in the world
+                            Your Premier Partner in Real Estate & Engineering Solutions
                         </motion.h2>
 
                         {/* Vision & Mission */}
@@ -86,7 +86,7 @@ export default function AboutSection() {
                                     <h3 className="text-lg font-semibold text-dark">Our vision</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm leading-relaxed">
-                                    To empower businesses with cutting-edge web solutions that enhance their digital presence and drive growth.
+                                    To lead the industry by delivering innovative, high-quality architectural and engineering solutions that redefine modern living.
                                 </p>
                             </div>
                             <div>
@@ -95,7 +95,7 @@ export default function AboutSection() {
                                     <h3 className="text-lg font-semibold text-dark">Our mission</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Our solutions are designed to meet the needs of modern enterprises, ensuring they thrive in today's competitive online landscape.
+                                    To provide seamless, end-to-end project execution that exceeds client expectations through transparency and excellence.
                                 </p>
                             </div>
                         </motion.div>

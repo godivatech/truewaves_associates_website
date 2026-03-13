@@ -90,16 +90,16 @@ export default function Footer() {
                         <div className="md:col-span-4 lg:border-l lg:border-gray-200 lg:pl-10 flex flex-col justify-between">
                             <div>
                                 <a
-                                    href="tel:+919487525226"
+                                    href="tel:04522535226"
                                     className="block text-[28px] font-bold text-navy hover:text-accent transition-colors mb-4 border-b border-accent pb-2 inline-block max-w-max"
                                 >
-                                    +91 9487525226
+                                    0452 2535226
                                 </a>
                                 <a
-                                    href="mailto:sanjay@truewavesgroup.com"
+                                    href="mailto:info@truewavesgroup.com"
                                     className="block text-[22px] font-bold text-navy hover:text-accent transition-colors mb-6 border-b border-accent pb-2 inline-block max-max"
                                 >
-                                    sanjay@truewavesgroup.com
+                                    info@truewavesgroup.com
                                 </a>
                                 <p className="text-[15px] font-medium text-muted-foreground mb-10 max-w-xs leading-relaxed hidden">
                                     {/* Address hidden here to match strictly the layout of Image 1 which had no address */}
