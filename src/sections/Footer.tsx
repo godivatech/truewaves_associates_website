@@ -131,6 +131,10 @@ export default function Footer() {
                         <p className="text-[15px] text-muted-foreground font-medium">
                             © 2026 <span className="text-navy font-bold">TrueWaves</span>. All Rights Reserved.
                         </p>
+                        <span className="hidden sm:inline text-muted-foreground">•</span>
+                        <p className="text-[15px] text-muted-foreground font-medium">
+                            Designed and developed by <a href="https://godivatech.com" className="text-navy font-bold hover:text-accent transition-colors">godivatech</a>
+                        </p>
                     </div>
                 </motion.div>
             </div>
