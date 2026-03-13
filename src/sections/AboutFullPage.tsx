@@ -344,7 +344,7 @@ export default function AboutSection() {
                 style={{ x: springX }}
                 className="flex gap-8 sm:gap-16 px-4 sm:px-6 lg:px-8"
               >
-                {timelineData.map((item, index) => (
+                {timelineData.map((item) => (
                   <motion.div
                     key={item.year}
                     className="flex-shrink-0 w-[280px] sm:w-[350px] text-center"
