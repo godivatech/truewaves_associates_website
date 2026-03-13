@@ -69,32 +69,40 @@ const timelineData = [
 
 const infoCards = [
   {
-    number: '01.',
+    id: '01.',
     title: 'What we do',
     description: 'We maintain this by ensuring transparency and professional conduct in every aspect.',
     link: 'Our Solutions',
-    image: '/images/card-1.jpg',
-    bgColor: 'bg-[#1a1a1a]',
-    textColor: 'text-white' as const,
+    bgColor: 'bg-[#12140d]',
+    numberColor: 'text-lime',
+    buttonBg: 'bg-white',
+    arrowColor: 'text-black',
+    contentPosition: 'bottom'
   },
   {
-    number: '02.',
+    id: '02.',
     title: 'Our impact',
     description: 'We work with both investors and developers to create landmarks that make an impact.',
     link: 'See Projects',
-    image: '/images/card-2.jpg',
-    bgColor: 'bg-lime',
-    textColor: 'text-[#1a1a1a]' as const,
+    bgColor: 'bg-[#d9e661]', // Brighter lime
+    numberColor: 'text-black/40',
+    buttonBg: 'bg-white',
+    arrowColor: 'text-black',
+    image: '/images/construction-site.jpg',
+    contentPosition: 'top'
   },
   {
-    number: '03.',
+    id: '03.',
     title: 'Core values',
     description: 'To empower businesses with cutting-edge web solutions that enhance their digital presence and drive growth.',
     link: 'Discover More',
-    image: '/images/card-3.jpg',
-    bgColor: 'bg-[#1a1a1a]',
-    textColor: 'text-white' as const,
-  },
+    bgColor: 'bg-[#1c1c1c]',
+    numberColor: 'text-white/20',
+    buttonBg: 'bg-lime',
+    arrowColor: 'text-black',
+    image: '/images/innovation.jpg',
+    contentPosition: 'top'
+  }
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -113,20 +121,20 @@ export default function AboutSection() {
 
         {/* Background Outline Text */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full pointer-events-none select-none overflow-hidden h-full flex items-center">
-            <motion.span
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 0.1, x: 0 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
-                style={{ 
-                    WebkitTextStroke: '1px rgba(255,255,255,0.3)',
-                    color: 'transparent'
-                }}
-            >
-                BUILDING FUTURE
-            </motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 0.1, x: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
+            style={{
+              WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+              color: 'transparent'
+            }}
+          >
+            BUILDING FUTURE
+          </motion.span>
         </div>
-        
+
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-20">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <motion.h1
@@ -137,7 +145,7 @@ export default function AboutSection() {
             >
               About <br /> Us
             </motion.h1>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -329,68 +337,84 @@ export default function AboutSection() {
 
           {/* Learn More Cards */}
           <div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl lg:text-5xl mb-12"
+              className="text-4xl md:text-5xl lg:text-7xl font-light text-dark leading-[1.1] tracking-tight"
             >
-              <span className="font-light block text-dark/70">Learn more</span>
-              <span className="font-bold block text-dark">about us</span>
+              Learn more <br />
+              <span className="font-bold">about us</span>
             </motion.h2>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="lg:mb-4 lg:text-right"
+              >
+              </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {infoCards.map((card, index) => {
-                const isLight = card.textColor === 'text-[#1a1a1a]';
                 return (
                   <motion.div
-                    key={card.number}
+                    key={index}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`group relative ${card.bgColor} rounded-[40px] overflow-hidden min-h-[500px] flex flex-col justify-between`}
+                    className={`relative flex flex-col h-full rounded-[48px] p-8 md:p-12 overflow-hidden ${card.bgColor} group min-h-[580px]`}
                   >
-                    <div className="p-10 relative z-20 h-full flex flex-col">
-                      <div className={`text-sm mb-4 font-medium ${isLight ? 'text-dark/60' : 'text-white/60'}`}>
-                        {card.number}
-                      </div>
-                      <div className={`w-full h-px mb-10 ${isLight ? 'bg-dark/10' : 'bg-white/10'}`} />
+                    {/* Card Header: Number and Line */}
+                    <div className="mb-8">
+                      <span className={`text-[15px] font-bold ${card.numberColor} block mb-6`}>{card.id}</span>
+                      <div className={`h-[1px] w-full ${card.bgColor.includes('lime') ? 'bg-black/10' : 'bg-white/10'}`} />
+                    </div>
 
-                      {/* Push content to bottom */}
-                      <div className="mt-auto">
-                        <h3 className={`text-4xl font-bold mb-4 tracking-tight leading-tight ${card.textColor}`}>
+                    {/* Flex Content Container */}
+                    <div className={`flex-1 flex flex-col ${card.contentPosition === 'bottom' ? 'justify-end pb-16' : 'justify-start pt-4'}`}>
+                      <div className="relative z-10">
+                        <h3 className={`text-[40px] md:text-[52px] font-bold mb-8 leading-[1.1] tracking-tight ${card.bgColor.includes('lime') ? 'text-black' : 'text-white'}`}>
                           {card.title}
                         </h3>
-                        <p className={`text-base mb-8 max-w-[280px] leading-relaxed ${isLight ? 'text-dark/70' : 'text-white/70'}`}>
+                        <p className={`text-[16px] leading-[1.6] mb-12 max-w-[310px] ${card.bgColor.includes('lime') ? 'text-black/70' : 'text-white/70'}`}>
                           {card.description}
                         </p>
-                        <a
-                          href="#"
-                          className={`text-sm font-semibold underline underline-offset-8 transition-opacity hover:opacity-80 ${card.textColor}`}
-                        >
+                        <a href="#" className={`text-[14px] font-bold uppercase tracking-wider underline underline-offset-[16px] decoration-2 transition-opacity hover:opacity-70 ${card.bgColor.includes('lime') ? 'text-black' : 'text-white'}`}>
                           {card.link}
                         </a>
                       </div>
                     </div>
 
-                    {/* Image handling - Card 01 has no image in reference */}
-                    {index > 0 && (
-                      <div className="absolute bottom-0 right-0 w-3/4 h-1/2 overflow-hidden">
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="w-full h-full object-cover rounded-tl-[40px]"
+                    {/* Image Section for Cards 02 & 03 (Aligned to Bottom) */}
+                    {card.image && (
+                      <div className="absolute bottom-0 right-0 w-[85%] h-[40%] overflow-hidden">
+                        <img 
+                          src={card.image} 
+                          alt={card.title} 
+                          className="w-full h-full object-cover rounded-tl-[48px] grayscale contrast-[1.1]"
                         />
                       </div>
                     )}
 
-                    {/* Notched Hover/Arrow Button */}
-                    <div className="absolute bottom-0 right-0 z-30">
-                      {/* Custom SVG/CSS cutout effect */}
-                      <div className={`relative w-24 h-24 flex items-center justify-center bg-white rounded-tl-[40px]`}>
-                        <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${isLight && index !== 1 ? 'bg-[#1a1a1a] text-white' : 'bg-lime text-dark'}`}>
-                          <ArrowUpRight className="w-6 h-6" />
+                    {/* Precise Notched Button Area */}
+                    <div className="absolute bottom-0 right-0 z-20">
+                      {/* Visual Connector - Top */}
+                      <div className="absolute top-[-48px] right-0 w-[48px] h-[48px] bg-white pointer-events-none">
+                        <div className={`w-full h-full rounded-br-[48px] ${card.bgColor}`} />
+                      </div>
+                      {/* Visual Connector - Left */}
+                      <div className="absolute left-[-48px] bottom-0 w-[48px] h-[48px] bg-white pointer-events-none">
+                        <div className={`w-full h-full rounded-br-[48px] ${card.bgColor}`} />
+                      </div>
+
+                      {/* The Button Container (White square with rounded-tl) */}
+                      <div className="w-[124px] h-[124px] bg-white rounded-tl-[48px] flex items-center justify-center pt-3 pl-3">
+                        <div className={`w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg ${card.id === '01.' ? 'bg-black text-white' : 'bg-lime text-black'}`}>
+                          <ArrowUpRight className="w-8 h-8" />
                         </div>
                       </div>
                     </div>
