@@ -10,6 +10,7 @@ interface Project {
   title: string;
   location: string;
   status: ProjectStatus;
+  category: string;
   image: string;
 }
 
@@ -17,65 +18,70 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Metro Junction Mall',
-    location: 'Chennai, Tamil Nadu',
+    title: 'TVS Emerald Peninsula',
+    category: 'Infrastructure',
+    location: 'Chennai',
     status: 'COMPLETED',
-    image: '/images/Projects/1.jpg.jpeg',
+    image: '/images/Projects/TVS emerald penisula, chennai.png',
   },
   {
-    title: 'Kovai Greenview',
-    location: 'Coimbatore, Tamil Nadu',
-    status: 'UNDER CONSTRUCTION',
-    image: '/images/project-2.jpg',
-  },
-  {
-    title: 'Delta Business Tower',
-    location: 'Trichy, Tamil Nadu',
+    title: 'Chennai Metro Rail',
+    category: 'Infrastructure',
+    location: 'Teynampet, Chennai',
     status: 'COMPLETED',
-    image: '/images/project-3.jpg',
+    image: '/images/Projects/chennai metrorail, Tyenapet chennai.png',
   },
   {
-    title: 'Heritage Skyline',
-    location: 'Salem, Tamil Nadu',
-    status: 'UNDER CONSTRUCTION',
-    image: '/images/project-4.jpg',
-  },
-  {
-    title: 'Skyline Residency',
-    location: 'Chennai, Tamil Nadu',
-    status: 'UNDER CONSTRUCTION',
-    image: '/images/project-1.jpg',
-  },
-  {
-    title: 'Delta Mixed-Use',
-    location: 'Trichy, Tamil Nadu',
+    title: 'L&T Infra Work',
+    category: 'Infrastructure',
+    location: 'Kudankulam',
     status: 'COMPLETED',
-    image: '/images/project-3.jpg',
+    image: '/images/Projects/L&T infra work. Kudankulam.png',
+  },
+  {
+    title: 'Fitness Center',
+    category: 'Institutional',
+    location: 'Kamarajar University, Chennai',
+    status: 'COMPLETED',
+    image: '/images/Projects/Fitness center kamarajar university, chennai.png',
+  },
+  {
+    title: 'MGR University',
+    category: 'Institutional',
+    location: 'Chennai',
+    status: 'COMPLETED',
+    image: '/images/Projects/MGR university, Chennai.jpeg',
+  },
+  {
+    title: 'TVS Emerald Lakeshore Infra',
+    category: 'Infrastructure',
+    location: 'Chennai',
+    status: 'COMPLETED',
+    image: '/images/Projects/TVS emerold Lakshore infra, chennai.jpeg',
   },
 ];
 
 const filterOptions = [
   { key: 'status', label: 'Project Status', options: ['All', 'Completed', 'Under Construction'] },
-  { key: 'type', label: 'Project Type', options: ['All', 'Residential', 'Commercial', 'Mixed-Use'] },
-  { key: 'location', label: 'Project Location', options: ['All', 'Chennai', 'Coimbatore', 'Trichy', 'Salem'] },
-  { key: 'budget', label: 'Project Budget', options: ['All', 'Under $1M', '$1M - $5M', '$5M+'] },
+  { key: 'category', label: 'Category', options: ['All', 'Infrastructure', 'Institutional'] },
+  { key: 'location', label: 'Location', options: ['All', 'Chennai', 'Kudankulam'] },
 ] as const;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function ProjectsSection() {
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<Record<string, string>>({
     status: 'All',
-    type: 'All',
+    category: 'All',
     location: 'All',
-    budget: 'All',
   });
 
   const filteredProjects = projects.filter((project) => {
-    if (
-      filters.status !== 'All' &&
-      project.status.toLowerCase() !== filters.status.toLowerCase()
-    )
+    if (filters.status !== 'All' && project.status.toLowerCase() !== filters.status.toLowerCase())
+      return false;
+    if (filters.category !== 'All' && project.category.toLowerCase() !== filters.category.toLowerCase())
+      return false;
+    if (filters.location !== 'All' && !project.location.toLowerCase().includes(filters.location.toLowerCase()))
       return false;
     return true;
   });
@@ -85,7 +91,7 @@ export default function ProjectsSection() {
       {/* ── Hero Banner ─────────────────────────────────────── */}
       <div className="relative h-[65vh] min-h-[500px] flex flex-col justify-end overflow-hidden">
         <img
-          src="/images/Projects/1.jpg.jpeg"
+          src="/images/Projects/TVS emerald penisula, chennai.png"
           alt="Modern architecture project"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -93,20 +99,20 @@ export default function ProjectsSection() {
 
         {/* Background Outline Text */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full pointer-events-none select-none overflow-hidden h-full flex items-center">
-            <motion.span
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 0.1, x: 0 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
-                style={{ 
-                    WebkitTextStroke: '1px rgba(255,255,255,0.3)',
-                    color: 'transparent'
-                }}
-            >
-                LANDMARKS
-            </motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 0.1, x: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
+            style={{
+              WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+              color: 'transparent'
+            }}
+          >
+            LANDMARKS
+          </motion.span>
         </div>
-        
+
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-20">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <motion.h1
@@ -117,7 +123,7 @@ export default function ProjectsSection() {
             >
               Latest <br /> Projects
             </motion.h1>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,9 +131,9 @@ export default function ProjectsSection() {
               className="lg:mb-4 lg:text-right"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6">
-                        <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                        Featured Projects
-                    </div>
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                Featured Projects
+              </div>
               <p className="text-white/90 text-sm max-w-sm leading-relaxed uppercase tracking-wide">
                 Explore our portfolio of landmark developments and architectural excellence across the region.
               </p>
@@ -167,7 +173,7 @@ export default function ProjectsSection() {
               </div>
             ))}
             <button
-              onClick={() => setFilters({ status: 'All', type: 'All', location: 'All', budget: 'All' })}
+              onClick={() => setFilters({ status: 'All', category: 'All', location: 'All' })}
               className="px-8 py-3 bg-accent text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-colors shadow-lg shadow-accent/10"
             >
               Reset

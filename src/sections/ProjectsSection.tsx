@@ -74,15 +74,13 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`cursor-pointer transition-all duration-300 ${
-                  activeProject === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
-                }`}
+                className={`cursor-pointer transition-all duration-300 ${activeProject === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
+                  }`}
                 onClick={() => setActiveProject(index)}
               >
                 <div className="flex items-start gap-4">
-                  <span className={`text-5xl font-bold ${
-                    activeProject === index ? 'text-white' : 'text-white/30'
-                  }`}>
+                  <span className={`text-5xl font-bold ${activeProject === index ? 'text-white' : 'text-white/30'
+                    }`}>
                     {project.number}
                   </span>
                   <div className="pt-2">
@@ -90,9 +88,8 @@ export default function ProjectsSection() {
                       <MapPin className="w-4 h-4" />
                       {project.location}
                     </div>
-                    <h3 className={`text-xl font-semibold transition-colors ${
-                      activeProject === index ? 'text-white' : 'text-white/60'
-                    }`}>
+                    <h3 className={`text-xl font-semibold transition-colors ${activeProject === index ? 'text-white' : 'text-white/60'
+                      }`}>
                       {project.title}
                     </h3>
                   </div>
@@ -122,7 +119,7 @@ export default function ProjectsSection() {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </AnimatePresence>
-          
+
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-transparent to-transparent lg:hidden" />
         </div>

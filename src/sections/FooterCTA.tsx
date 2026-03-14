@@ -47,7 +47,7 @@ export default function FooterCTA() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-lg text-white/80 mb-10 max-w-xl mx-auto"
         >
-          Whether you're exploring our homes or envisioning something custom, 
+          Whether you're exploring our homes or envisioning something custom,
           we're here to bring your dream to life.
         </motion.p>
 

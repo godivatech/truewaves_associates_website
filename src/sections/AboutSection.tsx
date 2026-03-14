@@ -6,9 +6,10 @@ interface CounterProps {
     target: number;
     suffix?: string;
     duration?: number;
+    suffixClassName?: string;
 }
 
-function AnimatedCounter({ target, suffix = '', duration = 2000 }: CounterProps) {
+function AnimatedCounter({ target, suffix = '', duration = 2000, suffixClassName = '' }: CounterProps) {
     const [count, setCount] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -31,7 +32,8 @@ function AnimatedCounter({ target, suffix = '', duration = 2000 }: CounterProps)
 
     return (
         <span ref={ref}>
-            {count.toLocaleString()}{suffix}
+            {count.toLocaleString()}
+            <span className={suffixClassName}>{suffix}</span>
         </span>
     );
 }
@@ -46,125 +48,151 @@ export default function AboutSection() {
     return (
         <section className="py-24 lg:py-32 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Label */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="mb-8"
-                >
-                    <span className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark">
-                        WE ARE <span className="text-accent">-</span> WHO WE ARE
-                    </span>
-                </motion.div>
+                
+                {/* TOP ROW */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-24">
+                    <div className="lg:col-span-5 flex items-start">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 border border-[#daf552] rounded-full text-[10px] font-bold tracking-[0.2em] text-dark uppercase">
+                                WE ARE <span className="text-[#daf552] text-xl leading-none mt-[-2px]">•</span> WHO WE ARE
+                            </span>
+                        </motion.div>
+                    </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                    {/* Left Column - Content */}
-                    <div>
+                    <div className="lg:col-span-7">
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark leading-tight"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.05] tracking-tight mb-12 max-w-3xl"
                         >
                             Your Premier Partner in Real Estate & Engineering Solutions
                         </motion.h2>
 
-                        {/* Vision & Mission */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10"
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-10"
                         >
-                            <div>
-                                <div className="flex items-center gap-3 mb-3">
+                            <div className="pr-4 lg:pr-8">
+                                <div className="flex items-center gap-3 mb-4">
                                     <Diamond className="w-5 h-5 text-dark" />
-                                    <h3 className="text-lg font-semibold text-dark">Our vision</h3>
+                                    <h3 className="text-lg font-bold text-dark">Our vision</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                <p className="text-dark/70 text-sm leading-relaxed font-medium">
                                     To lead the industry by delivering innovative, high-quality architectural and engineering solutions that redefine modern living.
                                 </p>
                             </div>
-                            <div>
-                                <div className="flex items-center gap-3 mb-3">
+                            <div className="pr-4 lg:pr-8">
+                                <div className="flex items-center gap-3 mb-4">
                                     <Rocket className="w-5 h-5 text-dark" />
-                                    <h3 className="text-lg font-semibold text-dark">Our mission</h3>
+                                    <h3 className="text-lg font-bold text-dark">Our mission</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                <p className="text-dark/70 text-sm leading-relaxed font-medium">
                                     To provide seamless, end-to-end project execution that exceeds client expectations through transparency and excellence.
                                 </p>
                             </div>
                         </motion.div>
                     </div>
+                </div>
 
-                    {/* Right Column - Images & Stats */}
-                    <div className="space-y-6">
-                        {/* Main Image */}
+                {/* BOTTOM ROW */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+                    {/* Left Column - Large Image */}
+                    <div className="lg:col-span-5 h-[400px] lg:h-auto lg:min-h-[600px] relative">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="relative overflow-hidden rounded-3xl"
-                            style={{ clipPath: 'polygon(0 8%, 15% 8%, 15% 0, 100% 0, 100% 100%, 0 100%)' }}
+                            className="relative w-full h-full rounded-[2rem] overflow-hidden"
+                            style={{ backgroundColor: '#f5f5f5' }}
                         >
                             <img
-                                src="/images/about-building.jpg"
-                                alt="Modern building"
-                                className="w-full h-80 object-cover"
+                                src="/images/Projects/TVS emerald penisula, chennai.png"
+                                alt="TVS Emerald Peninsula"
+                                className="absolute inset-0 w-full h-full object-cover"
                             />
+                            
+                            {/* Seamless Tab Cutout */}
+                            <div className="absolute top-0 left-0 w-24 sm:w-32 h-20 sm:h-24 bg-white rounded-br-[2rem] z-10"></div>
+                            <div className="absolute top-0 left-24 sm:left-32 w-8 h-8 bg-transparent rounded-tl-[2rem] shadow-[-1.2rem_-1.2rem_0_1.2rem_white] z-10"></div>
+                            <div className="absolute top-20 sm:top-24 left-0 w-8 h-8 bg-transparent rounded-tl-[2rem] shadow-[-1.2rem_-1.2rem_0_1.2rem_white] z-10"></div>
                         </motion.div>
+                    </div>
 
-                        {/* Stats Grid */}
-                        <div className="grid grid-cols-2 gap-4">
-                            {stats.slice(0, 2).map((stat, index) => (
-                                <motion.div
-                                    key={stat.label}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                                    className="bg-cream rounded-2xl p-6"
-                                >
-                                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
-                                        {stat.label}
-                                    </p>
-                                    <div className="text-4xl font-bold text-dark">
-                                        <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                    {/* Right Column - Stats Grid */}
+                    <div className="lg:col-span-7">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
+                            {/* Stat 1 */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
+                            >
+                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[0].label}</h4>
+                                <hr className="w-full border-dark/10 my-4" />
+                                <div className="mt-auto">
+                                    <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">
+                                        <AnimatedCounter target={stats[0].value} suffix={stats[0].suffix} suffixClassName="text-[#c1eb25]" />
                                     </div>
-                                    <p className="text-sm text-muted-foreground mt-1">{stat.sublabel}</p>
-                                </motion.div>
-                            ))}
-                        </div>
+                                    <p className="text-sm text-dark/50 font-medium mt-3">{stats[0].sublabel}</p>
+                                </div>
+                            </motion.div>
 
-                        {/* Bottom Row - Stat + Image */}
-                        <div className="grid grid-cols-2 gap-4">
+                            {/* Stat 2 */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                                className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
+                            >
+                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[1].label}</h4>
+                                <hr className="w-full border-dark/10 my-4" />
+                                <div className="mt-auto">
+                                    <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">
+                                        <AnimatedCounter target={stats[1].value} suffix={stats[1].suffix} suffixClassName="text-[#c1eb25]" />
+                                    </div>
+                                    <p className="text-sm text-dark/50 font-medium mt-3">{stats[1].sublabel}</p>
+                                </div>
+                            </motion.div>
+
+                            {/* Stat 3 */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.5 }}
-                                className="bg-cream rounded-2xl p-6"
+                                className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
                             >
-                                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
-                                    {stats[2].label}
-                                </p>
-                                <div className="text-4xl font-bold text-dark">
-                                    <AnimatedCounter target={stats[2].value} suffix={stats[2].suffix} />
+                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[2].label}</h4>
+                                <hr className="w-full border-dark/10 my-4" />
+                                <div className="mt-auto">
+                                    <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">
+                                        <AnimatedCounter target={stats[2].value} suffix={stats[2].suffix} suffixClassName="text-[#c1eb25]" />
+                                    </div>
+                                    <p className="text-sm text-dark/50 font-medium mt-3">{stats[2].sublabel}</p>
                                 </div>
-                                <p className="text-sm text-muted-foreground mt-1">{stats[2].sublabel}</p>
                             </motion.div>
 
+                            {/* Image 4 */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.5 }}
-                                className="rounded-2xl overflow-hidden"
+                                transition={{ duration: 0.5, delay: 0.6 }}
+                                className="rounded-[2rem] overflow-hidden min-h-[250px] sm:min-h-[280px]"
                             >
                                 <img
                                     src="/images/about-model.jpg"
@@ -175,7 +203,8 @@ export default function AboutSection() {
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     );
-}
+}
