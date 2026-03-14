@@ -5,19 +5,19 @@ const articles = [
   {
     title: 'Eco-Friendly Construction Trends',
     category: 'Social Media',
-    date: 'Mar 18, 2025',
+    date: 'Mar 14, 2026',
     image: '/images/blog-1.jpg',
   },
   {
     title: 'Luxury Meets Minimalism in Homes',
     category: 'Company',
-    date: 'Mar 18, 2025',
+    date: 'Mar 14, 2026',
     image: '/images/blog-2.jpg',
   },
   {
     title: 'Biophilic Architecture: Nature in Design',
     category: 'Social Media',
-    date: 'Mar 18, 2025',
+    date: 'Mar 14, 2026',
     image: '/images/blog-3.jpg',
   },
 ];
