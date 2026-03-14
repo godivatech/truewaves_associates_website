@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, Building2, CheckCircle } from 'lucide-react';
+import ProjectEvolution from '../components/ProjectEvolution';
+import MDMessageSection from '../components/MDMessageSection';
+import VisionMissionSection from '../components/VisionMissionSection';
+
 
 // ─── Animated Counter ─────────────────────────────────────────────────────────
 
@@ -41,29 +45,29 @@ function AnimatedCounter({ target, suffix = '', duration = 2000 }: CounterProps)
 
 const timelineData = [
   {
-    year: '1983',
+    year: '2008',
     image: '/images/timeline-1.png',
-    text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudium, totam rem aperiam, eaque ipsa.',
+    text: 'True Waves Associates was founded as a small construction company in Madurai, driven by a vision to provide optimized business solutions.',
   },
   {
-    year: '1996',
+    year: '2012',
     image: '/images/timeline-2.png',
-    text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudium, totam rem aperiam, eaque ipsa.',
+    text: 'Expanded our operations into multi-storey residential apartments, establishing a reputation for quality and timely delivery.',
   },
   {
-    year: '2005',
+    year: '2016',
     image: '/images/timeline-3.png',
-    text: 'Natus error sit voluptatem accusantium doloremque laudium.',
+    text: 'Diversified into educational infrastructure, delivering state-of-the-art facilities for schools and colleges across South India.',
   },
   {
-    year: '2013',
+    year: '2020',
     image: '/images/timeline-4.png',
-    text: 'Quae ab illoentore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+    text: 'Ventured into large-scale government infrastructure projects, strengthening our commitment to national development.',
   },
   {
-    year: '2024',
+    year: '2026',
     image: '/images/timeline-5.png',
-    text: 'Soloremque laudium, totam rem aperiam, eaque ipsa quae ab illoentore veritatis.',
+    text: 'Celebrating 18+ years of excellence, continuing to shape the world of tomorrow with innovation and trust.',
   },
 ];
 
@@ -94,7 +98,7 @@ const infoCards = [
   {
     id: '03.',
     title: 'Core values',
-    description: 'To empower businesses with cutting-edge web solutions that enhance their digital presence and drive growth.',
+    description: 'To deliver superior civil engineering and construction services with uncompromising quality and architectural excellence.',
     link: 'Discover More',
     bgColor: 'bg-accent',
     numberColor: 'text-white/20',
@@ -173,8 +177,12 @@ export default function AboutSection() {
         </div>
       </div>
 
+      <MDMessageSection />
+      <ProjectEvolution />
+      <VisionMissionSection />
+
       {/* ── Main Content ────────────────────────────────────── */}
-      <div className="bg-white rounded-t-[40px] -mt-10 relative z-10">
+      <div className="bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
 
           {/* Top: Heading + Description */}
@@ -221,10 +229,10 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-muted-foreground mb-6"
               >
-                In markets from renewable energy, sports and entertainment, to data
-                centers and healthcare, we work to ensure the built environment leaves
-                a lasting positive impact. Together, we strive to make your project
-                better than you imagined possible.
+                From premium educational institutions and multi-storey residential 
+                apartments to strategic government infrastructure, we ensure every project 
+                leaves a lasting positive impact. Together, we strive to build structures 
+                that stand the test of time and trust.
               </motion.p>
               <motion.a
                 initial={{ opacity: 0, y: 30 }}
@@ -243,6 +251,7 @@ export default function AboutSection() {
               </motion.a>
             </div>
           </div>
+
 
           {/* Team Image with Floating Stats */}
           <motion.div
@@ -271,17 +280,17 @@ export default function AboutSection() {
               <p className="text-sm text-gray-500 font-medium">Years of experience</p>
             </div>
 
-            {/* Floating Stats: top-right (Ongoing) */}
+            {/* Floating Stats: top-right (Sq.Ft. Covered) */}
             <div className="absolute top-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-start justify-between mb-2 gap-4">
                 <div className="text-5xl font-bold text-navy">
-                  <AnimatedCounter target={9} />
+                  <AnimatedCounter target={10} suffix="M+" />
                 </div>
                 <div className="mt-2 p-2 bg-navy/10 rounded-lg">
                   <CheckCircle className="w-6 h-6 text-navy" />
                 </div>
               </div>
-              <p className="text-sm text-gray-500 font-medium">Ongoing projects</p>
+              <p className="text-sm text-gray-500 font-medium">Sq.Ft. Covered</p>
             </div>
 
             {/* Stats: bottom-left (Completed) */}
@@ -301,7 +310,7 @@ export default function AboutSection() {
             <div className="absolute bottom-8 right-8 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-start justify-between mb-2 gap-4">
                 <div className="text-5xl font-bold text-navy">
-                  <AnimatedCounter target={122} />
+                  <AnimatedCounter target={115} />
                 </div>
                 <div className="mt-2 p-2 bg-accent/20 rounded-lg">
                   <CheckCircle className="w-6 h-6 text-navy" />
@@ -332,7 +341,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl lg:text-5xl font-bold text-dark"
               >
-                40+ years of a<br />remarkable journey
+                18+ years of an<br />incredible journey
               </motion.h2>
             </div>
 

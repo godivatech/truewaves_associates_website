@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ChevronDown } from 'lucide-react';
 
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type ProjectStatus = 'COMPLETED' | 'UNDER CONSTRUCTION';
@@ -141,6 +142,8 @@ export default function ProjectsSection() {
           </div>
         </div>
       </div>
+
+
 
       {/* ── Main Content ────────────────────────────────────── */}
       <div className="bg-white rounded-t-[40px] -mt-10 relative z-10">

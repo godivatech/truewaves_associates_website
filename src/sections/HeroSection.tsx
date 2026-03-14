@@ -15,7 +15,7 @@ const featureCards = [
     {
         icon: Users,
         title: 'Our Values',
-        description: 'To become India\'s top construction Engineering company by exceeding Customer expectations with high standards.',
+        description: 'To deliver superior civil engineering services with uncompromising quality and architectural excellence.',
     },
 ];
 
@@ -79,7 +79,7 @@ export default function HeroSection() {
                         variants={itemVariants}
                         className="mt-6 text-lg text-white/80 max-w-2xl mx-auto"
                     >
-                        Over 18 years' experience as practicing civil engineers as project management, techno-legal consultants, Valuer for banks and class 1 constructor
+                        India's Premier Multi-Disciplinary Group for Architectural Engineering, Strategic Project Management, and High-Scale Infrastructure Development.
                     </motion.p>
                 </motion.div>
             </div>

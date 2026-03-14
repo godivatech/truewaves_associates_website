@@ -3,8 +3,13 @@ import { ArrowUpRight } from 'lucide-react';
 
 const teamMembers = [
     {
+        name: 'Ln. Er.S.Sanjay',
+        role: 'Founder & Managing Director',
+        image: '/images/Founder.jpeg',
+    },
+    {
         name: 'K. Rajendran',
-        role: 'Founder & CEO',
+        role: 'CEO',
         image: '/images/team-1.jpg',
     },
     {
