@@ -11,12 +11,12 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "var(--brand-ocean)",
-          dark: "#30B0EB",
+          DEFAULT: "#0A1128",
+          dark: "#060A18",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "var(--brand-navy)",
+          DEFAULT: "#3ABEF9",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -28,8 +28,8 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "var(--brand-lime)",
-          foreground: "#1A1A1A",
+          DEFAULT: "#3ABEF9",
+          foreground: "#0A1128",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -40,8 +40,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         ocean: "#3ABEF9",
+        azure: "#3ABEF9",
         navy: "#0A1128",
-        lime: "#D4E157",
         ice: "#F8FAFC",
         dark: {
           DEFAULT: "#0A1128",

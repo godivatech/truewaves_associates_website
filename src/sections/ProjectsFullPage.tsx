@@ -209,7 +209,7 @@ export default function ProjectsSection() {
                     <div className="absolute top-4 left-4">
                       <span
                         className={`px-4 py-1.5 rounded-full text-xs font-medium ${project.status === 'COMPLETED'
-                          ? 'bg-lime text-dark'
+                          ? 'bg-secondary text-dark'
                           : 'bg-white/90 text-dark'
                           }`}
                       >

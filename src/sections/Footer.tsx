@@ -42,9 +42,11 @@ export default function Footer() {
                         {/* Logo & Description */}
                         <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
                             <a href="#" className="flex items-center gap-3">
-                                <div className="relative w-8 h-8">
-                                    <div className="absolute inset-0 bg-accent rounded-md transform rotate-45" />
-                                </div>
+                                <img
+                                    src="/images/Logo.png"
+                                    alt="TrueWaves Logo"
+                                    className="h-20 w-auto object-contain"
+                                />
                                 <span className="text-2xl font-bold text-navy tracking-tight">TrueWaves</span>
                             </a>
                             <div className="mt-16 sm:mt-24">

@@ -90,8 +90,8 @@ export default function ServicesSection() {
               className="lg:mb-4 lg:text-right"
             >
               <div className="flex items-center lg:justify-end gap-3 text-white/70 text-sm font-medium tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-lime" />
-                Home <span className="text-lime">/</span> Services
+                <span className="w-8 h-px bg-secondary" />
+                Home <span className="text-secondary">/</span> Services
               </div>
               <p className="text-white/90 text-sm max-w-sm leading-relaxed uppercase tracking-wide">
                 We provide a comprehensive range of construction and development services tailored to modern needs.

@@ -1,84 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 199 95% 61%; /* #3ABEF9 - Brand Ocean */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 226 60% 10%; /* #0A1128 - Brand Navy */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 98%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 66 70% 60%; /* #D4E157 - Brand Lime */
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 199 95% 61%;
-    --radius: 0.625rem;
-
-    /* Brand Specific (Hex for reference) */
-    --brand-ocean: #3ABEF9;
-    --brand-navy: #0A1128;
-    --brand-lime: #D4E157;
-    --brand-ice: #F8FAFC;
-  }
+:root {
+  /* Brand Colors */
+  --brand-navy: #0A1128;
+  --brand-azure: #3ABEF9;
+  --brand-white: #FFFFFF;
+  --brand-muted: #F8FAFC;
+  
+  /* Semantic Mappings */
+  --color-primary: var(--brand-navy);
+  --color-secondary: var(--brand-azure);
+  --color-accent: var(--brand-azure);
+  --color-background: var(--brand-white);
+  --color-text: var(--brand-navy);
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   html {
     scroll-behavior: smooth;
   }
-
+  
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    overflow-x: hidden;
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow-y: auto;
+    @apply antialiased text-dark bg-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-accent text-navy font-bold rounded-full hover:opacity-90 transition-all active:scale-95;
   }
 
-  .glass {
-    @apply backdrop-blur-xl bg-white/10 border border-white/20;
-  }
-
-  .glass-dark {
-    @apply backdrop-blur-xl bg-black/20 border border-white/10;
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
-/* Custom scrollbar */
+/* Custom Utilities */
+.text-outline-white {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.glass-nav {
+  @apply backdrop-blur-md bg-white/80 border-b border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-navy/40 border border-white/10;
+}
+
+/* Smooth transitions */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--brand-muted);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-ocean);
+  background: var(--brand-azure);
   border-radius: 4px;
 }
 
@@ -88,6 +81,6 @@
 
 /* Selection color */
 ::selection {
-  background: var(--brand-lime);
+  background: var(--brand-azure);
   color: #FFFFFF;
 }

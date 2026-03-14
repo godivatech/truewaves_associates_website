@@ -6,26 +6,26 @@ const projects = [
   {
     number: '01',
     location: 'Chennai, Tamil Nadu',
-    title: 'Skyline Residency',
-    image: '/images/project-1.jpg',
+    title: 'TVS Emerald Peninsula',
+    image: '/images/Projects/TVS emerald penisula, chennai.png',
   },
   {
     number: '02',
-    location: 'Coimbatore, Tamil Nadu',
-    title: 'Emerald Gardenia',
-    image: '/images/project-2.jpg',
+    location: 'Teynampet, Chennai',
+    title: 'Chennai Metro Rail',
+    image: '/images/Projects/chennai metrorail, Tyenapet chennai.png',
   },
   {
     number: '03',
-    location: 'Madurai, Tamil Nadu',
-    title: 'Pearl City Heights',
-    image: '/images/project-3.jpg',
+    location: 'Kudankulam, Tamil Nadu',
+    title: 'L&T Infra Work',
+    image: '/images/Projects/L&T infra work. Kudankulam.png',
   },
   {
     number: '04',
     location: 'Chennai, Tamil Nadu',
-    title: 'Tech Wave Plaza',
-    image: '/images/project-4.jpg',
+    title: 'MGR University',
+    image: '/images/Projects/MGR university, Chennai.jpeg',
   },
 ];
 
@@ -46,7 +46,7 @@ export default function ProjectsSection() {
             className="mb-8"
           >
             <span className="inline-flex items-center px-4 py-2 border border-white/30 rounded-full text-xs font-medium tracking-wider text-white">
-              3D PROJECTS
+              PROJECTS
             </span>
           </motion.div>
 

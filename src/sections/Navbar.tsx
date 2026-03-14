@@ -47,9 +47,11 @@ export default function Navbar() {
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
-                            <span className="text-navy font-bold text-xl">T</span>
-                        </div>
+                        <img
+                            src="/images/Logo.png"
+                            alt="TrueWaves Logo"
+                            className="h-16 w-auto object-contain"
+                        />
                         <span className="text-2xl font-bold tracking-tight text-navy">
                             TrueWaves
                         </span>
