@@ -59,7 +59,7 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 pb-20">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -77,7 +77,7 @@ export default function HeroSection() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="mt-6 text-lg text-white/80 max-w-2xl mx-auto"
+                        className="mt-6 text-xl text-white/80 max-w-2xl mx-auto"
                     >
                         India's Premier Multi-Disciplinary Group for Architectural Engineering, Strategic Project Management, and High-Scale Infrastructure Development.
                     </motion.p>
@@ -95,7 +95,7 @@ export default function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.6 }}
                             className="max-w-md"
                         >
-                            <p className="text-xl text-white font-medium">
+                            <p className="text-2xl text-white font-medium">
                                 We design to development process, delivering lasting value to investors and communities.
                             </p>
                         </motion.div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
                             >
                                 View Services
                                 <span className="w-8 h-8 bg-accent group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
-                                    <ArrowRight className="w-4 h-4" />
+                                    <ArrowRight className="w-4 h-4 text-white group-hover:text-accent transition-colors" />
                                 </span>
                             </a>
                         </motion.div>
@@ -134,10 +134,10 @@ export default function HeroSection() {
                                 className="glass rounded-2xl p-6"
                             >
                                 <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mb-4">
-                                    <card.icon className="w-5 h-5 text-navy" />
+                                    <card.icon className="w-5 h-5 text-white" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-white mb-2">{card.title}</h3>
-                                <p className="text-sm text-white/70">{card.description}</p>
+                                <h3 className="text-xl font-semibold text-white mb-2">{card.title}</h3>
+                                <p className="text-base text-white/70">{card.description}</p>
                             </motion.div>
                         ))}
                     </motion.div>

@@ -117,13 +117,13 @@ export default function AccreditationsSection() {
                     <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                       <ExternalLink className="w-5 h-5 text-accent" />
                     </div>
-                    
+
                     {item.image && (
                       <div className="mb-6 h-12 w-auto grayscale group-hover:grayscale-0 transition-all duration-500">
                         <img src={item.image} alt={item.title} className="h-full object-contain" />
                       </div>
                     )}
-                    
+
                     <h4 className="text-xl font-bold text-navy group-hover:text-accent transition-colors">
                       {item.title}
                     </h4>
@@ -131,7 +131,7 @@ export default function AccreditationsSection() {
                     <p className="text-gray-600 mt-4 leading-relaxed">
                       {item.description}
                     </p>
-                    
+
                     <div className="mt-6 flex items-center text-sm font-bold text-navy opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
                       LEARN MORE <ArrowUpRight className="ml-1 w-4 h-4" />
                     </div>
@@ -147,10 +147,10 @@ export default function AccreditationsSection() {
 }
 
 const ArrowUpRight = ({ className }: { className?: string }) => (
-  <svg 
-    className={className} 
-    fill="none" 
-    stroke="currentColor" 
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
     viewBox="0 0 24 24"
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
