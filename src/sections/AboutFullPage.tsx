@@ -194,7 +194,7 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-4 py-2 border border-dark/20 rounded-full text-xs font-medium tracking-wider text-dark mb-6"
               >
-                WE ARE <span className="text-accent">-</span> WHO WE ARE
+                WHO WE ARE
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}

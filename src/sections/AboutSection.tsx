@@ -59,7 +59,7 @@ export default function AboutSection() {
                             transition={{ duration: 0.5 }}
                         >
                             <span className="inline-flex items-center gap-3 px-6 py-2.5 border border-[#daf552] rounded-full text-[10px] font-bold tracking-[0.2em] text-dark uppercase">
-                                WE ARE <span className="text-[#daf552] text-xl leading-none mt-[-2px]">•</span> WHO WE ARE
+                                WHO WE ARE
                             </span>
                         </motion.div>
                     </div>
