@@ -203,11 +203,11 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl lg:text-6xl font-bold text-navy leading-tight"
               >
-                Shaping the
+                Excellence in
                 <br />
-                world of things
+                Engineering and
                 <br />
-                to come
+                Construction
               </motion.h2>
             </div>
 
