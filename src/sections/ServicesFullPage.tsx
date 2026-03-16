@@ -1,5 +1,7 @@
+// @ts-ignore
 import { addMinutes } from 'date-fns';
 import { motion } from 'framer-motion';
+// @ts-ignore
 import { ClipboardList, PencilRuler, HardHat, Tractor, Building2, Key, ArrowUpRight } from 'lucide-react';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────

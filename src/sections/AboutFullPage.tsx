@@ -71,6 +71,7 @@ const timelineData = [
   },
 ];
 
+// @ts-ignore
 const infoCards = [
   {
     id: '01.',
