@@ -50,10 +50,10 @@ export default function Navbar() {
                         <img
                             src="/images/Logo.png"
                             alt="TrueWaves Logo"
-                            className="h-16 w-auto object-contain"
+                            className="h-20 w-auto object-contain"
                         />
-                        <span className="text-2xl font-bold tracking-tight text-navy">
-                            TrueWaves
+                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy">
+                            TrueWavesGroup
                         </span>
                     </Link>
 
@@ -64,14 +64,14 @@ export default function Navbar() {
                                 {link.href.startsWith('/') && !link.href.includes('#') ? (
                                     <Link
                                         to={link.href}
-                                        className="flex items-center gap-1 text-sm font-medium text-navy hover:text-accent transition-colors"
+                                        className="flex items-center gap-1 text-base font-medium text-navy hover:text-accent transition-colors"
                                     >
                                         {link.name}
                                     </Link>
                                 ) : (
                                     <a
                                         href={link.href}
-                                        className="flex items-center gap-1 text-sm font-medium text-navy hover:text-accent transition-colors"
+                                        className="flex items-center gap-1 text-base font-medium text-navy hover:text-accent transition-colors"
                                     >
                                         {link.name}
                                     </a>
@@ -84,13 +84,13 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center gap-6">
                         <a
                             href="tel:+919487525226"
-                            className="flex items-center gap-2 text-sm text-navy hover:text-accent transition-colors"
+                            className="flex items-center gap-2 text-base text-navy hover:text-accent transition-colors"
                         >
                             <span className="text-muted-foreground">Call Us:</span>
                             <span className="underline underline-offset-2">+(91) 9487525226</span>
                         </a>
                         <button
-                            className="px-6 py-2.5 bg-accent text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-all transform hover:scale-105"
+                            className="px-6 py-2.5 bg-accent text-navy text-base font-bold rounded-full hover:opacity-90 transition-all transform hover:scale-105"
                         >
                             Get In Touch
                         </button>

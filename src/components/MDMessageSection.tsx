@@ -55,18 +55,13 @@ export default function MDMessageSection() {
                 MD's Message
               </motion.span>
 
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-8 leading-tight">
-                Visionary Leadership & <br />
-                <span className="text-accent underline decoration-primary underline-offset-8">Mutual Trust</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-8 leading-tight">
+                Visionary Leadership & <span className="text-accent underline decoration-primary underline-offset-8">Mutual Trust</span>
               </h2>
 
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed italic">
-                <p>
-                  "I am extremely privileged and proud in saying that True Waves Associates is one of the front-runners in providing optimized business solutions in and around India. It all started in the year 2008 as a small construction company in Madurai and there was never turning back."
-                </p>
-                <p>
-                  "We take up projects of different scales right from individual residences to multi-stored apartments and from schools to colleges in different parts of India. We are currently working on Government projects as well. That is the way we've been doing it throughout our journey and it has earned us respect and mutual trust among our clients."
-                </p>
+                "I am extremely privileged and proud in saying that <strong className="text-navy font-bold">True Waves Associates</strong> is one of the <strong className="text-navy font-bold">front-runners</strong> in providing <strong className="text-navy font-bold">optimized business solutions</strong> in and around <strong className="text-navy font-bold">India</strong>. It all started in the <strong className="text-navy font-bold">year 2008</strong> as a small construction company in <strong className="text-navy font-bold">Madurai</strong> and there was never turning back."
+                "We take up projects of <strong className="text-navy font-bold">different scales</strong> right from <strong className="text-navy font-bold">individual residences</strong> to <strong className="text-navy font-bold">multi-stored apartments</strong> and from <strong className="text-navy font-bold">schools to colleges</strong> in different parts of India. We are currently working on <strong className="text-navy font-bold">Government projects</strong> as well. That is the way we've been doing it throughout our journey and it has earned us <strong className="text-navy font-bold">respect and mutual trust</strong> among our clients."
               </div>
 
               <div className="mt-12 pt-8 border-t border-gray-100">

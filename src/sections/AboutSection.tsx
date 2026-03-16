@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Diamond, Rocket } from 'lucide-react';
+
 
 interface CounterProps {
     target: number;
@@ -50,7 +50,7 @@ export default function AboutSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* TOP ROW */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-24">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-8 lg:mb-12">
                     <div className="lg:col-span-5 flex items-start">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -70,37 +70,12 @@ export default function AboutSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.05] tracking-tight mb-12 max-w-3xl"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.05] tracking-tight mb-0 max-w-3xl"
                         >
                             Your Premier Partner in Real Estate & Engineering Solutions
                         </motion.h2>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="grid grid-cols-1 sm:grid-cols-2 gap-10"
-                        >
-                            <div className="pr-4 lg:pr-8">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <Diamond className="w-5 h-5 text-dark" />
-                                    <h3 className="text-lg font-bold text-dark">Our vision</h3>
-                                </div>
-                                <p className="text-dark/70 text-sm leading-relaxed font-medium">
-                                    To lead the industry by delivering innovative, high-quality architectural and engineering solutions that redefine modern living.
-                                </p>
-                            </div>
-                            <div className="pr-4 lg:pr-8">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <Rocket className="w-5 h-5 text-dark" />
-                                    <h3 className="text-lg font-bold text-dark">Our mission</h3>
-                                </div>
-                                <p className="text-dark/70 text-sm leading-relaxed font-medium">
-                                    To provide seamless, end-to-end project execution that exceeds client expectations through transparency and excellence.
-                                </p>
-                            </div>
-                        </motion.div>
+
                     </div>
                 </div>
 

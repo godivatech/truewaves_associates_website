@@ -41,15 +41,15 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-0">
                         {/* Logo & Description */}
                         <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
-                            <a href="#" className="flex items-center gap-3">
+                            <a href="#" className="flex items-center gap-4">
                                 <img
                                     src="/images/Logo.png"
                                     alt="TrueWaves Logo"
-                                    className="h-20 w-auto object-contain"
+                                    className="h-32 w-auto object-contain"
                                 />
-                                <span className="text-2xl font-bold text-navy tracking-tight">TrueWaves</span>
+                                <span className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tighter">TrueWaves<span className="text-azure">Group</span></span>
                             </a>
-                            <div className="mt-16 sm:mt-24">
+                            <div className="mt-12 sm:mt-16">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
                                     True Waves Group of Companies. Engaged with professional engineering and construction since 2008.
                                 </p>
@@ -131,7 +131,7 @@ export default function Footer() {
                     {/* Copyright */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
                         <p className="text-[15px] text-muted-foreground font-medium">
-                            © 2026 <span className="text-navy font-bold">TrueWaves</span>. All Rights Reserved.
+                            © 2026 <span className="text-navy font-bold">TrueWavesGroup</span>. All Rights Reserved.
                         </p>
                         <span className="hidden sm:inline text-muted-foreground">•</span>
                         <p className="text-[15px] text-muted-foreground font-medium">

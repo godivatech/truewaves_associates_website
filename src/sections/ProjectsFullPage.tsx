@@ -104,7 +104,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 0.1, x: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
+            className="text-[10rem] lg:text-[15rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
             style={{
               WebkitTextStroke: '1px rgba(255,255,255,0.3)',
               color: 'transparent'
@@ -120,7 +120,7 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-6xl sm:text-8xl lg:text-[11rem] font-bold text-white tracking-tighter leading-[0.85]"
+              className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.85]"
             >
               Latest <br /> Projects
             </motion.h1>
@@ -237,6 +237,6 @@ export default function ProjectsSection() {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 }

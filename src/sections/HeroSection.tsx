@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Gem, Star, Users } from 'lucide-react';
+import { LayoutGrid, Zap, Handshake } from 'lucide-react';
 
 const featureCards = [
     {
-        icon: Gem,
+        icon: LayoutGrid,
         title: 'Our Vision',
         description: 'To become India\'s top construction Engineering company by exceeding Customer expectations with high standards.',
     },
     {
-        icon: Star,
+        icon: Zap,
         title: 'Our Mission',
         description: 'To build trust, deliver excellence: on Engineering Construction & Client Services.',
     },
     {
-        icon: Users,
+        icon: Handshake,
         title: 'Our Values',
         description: 'To deliver superior civil engineering services with uncompromising quality and architectural excellence.',
     },
@@ -87,43 +87,12 @@ export default function HeroSection() {
             {/* Bottom Section */}
             <div className="relative z-10 mt-auto">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-                    <div className="flex flex-col lg:flex-row items-end justify-between gap-8">
-                        {/* Left Text */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
-                            className="max-w-md"
-                        >
-                            <p className="text-2xl text-white font-medium">
-                                We design to development process, delivering lasting value to investors and communities.
-                            </p>
-                        </motion.div>
-
-                        {/* CTA Button */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.7 }}
-                        >
-                            <a
-                                href="#services"
-                                className="group inline-flex items-center gap-3 px-6 py-3 bg-white text-navy rounded-full font-medium hover:bg-accent transition-colors"
-                            >
-                                View Services
-                                <span className="w-8 h-8 bg-accent group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
-                                    <ArrowRight className="w-4 h-4 text-white group-hover:text-accent transition-colors" />
-                                </span>
-                            </a>
-                        </motion.div>
-                    </div>
-
                     {/* Feature Cards */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
-                        className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
                     >
                         {featureCards.map((card, index) => (
                             <motion.div
@@ -131,13 +100,14 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-                                className="glass rounded-2xl p-6"
+                                className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 flex flex-col h-full"
                             >
-                                <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mb-4">
-                                    <card.icon className="w-5 h-5 text-white" />
+                                <div className="mb-6">
+                                    <card.icon className="w-10 h-10 text-secondary" strokeWidth={1.5} />
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">{card.title}</h3>
-                                <p className="text-base text-white/70">{card.description}</p>
+                                <div className="h-px w-full bg-white/10 mb-8" />
+                                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">{card.title}</h3>
+                                <p className="text-base text-white/70 leading-relaxed font-medium">{card.description}</p>
                             </motion.div>
                         ))}
                     </motion.div>

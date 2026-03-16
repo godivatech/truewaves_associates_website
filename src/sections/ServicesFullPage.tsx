@@ -58,31 +58,31 @@ export default function ServicesSection() {
 
         {/* Background Outline Text */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full pointer-events-none select-none overflow-hidden h-full flex items-center">
-            <motion.span
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 0.1, x: 0 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="text-[20rem] lg:text-[30rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
-                style={{ 
-                    WebkitTextStroke: '1px rgba(255,255,255,0.3)',
-                    color: 'transparent'
-                }}
-            >
-                EXCELLENCE
-            </motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 0.1, x: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="text-[10rem] lg:text-[15rem] font-bold text-white whitespace-nowrap leading-none tracking-tighter"
+            style={{
+              WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+              color: 'transparent'
+            }}
+          >
+            EXCELLENCE
+          </motion.span>
         </div>
-        
+
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-20">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <motion.h1
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-6xl sm:text-8xl lg:text-[11rem] font-bold text-white tracking-tighter leading-[0.85]"
+              className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.85]"
             >
               Our <br /> Services
             </motion.h1>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,13 +124,9 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl lg:text-5xl font-bold text-dark leading-tight"
+                className="text-4xl lg:text-5xl font-bold text-navy leading-tight"
               >
-                Discover our
-                <br />
-                Design to Development
-                <br />
-                Process
+                Discover our Design to Development Process
               </motion.h2>
             </div>
           </div>
@@ -174,6 +170,6 @@ export default function ServicesSection() {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 }
