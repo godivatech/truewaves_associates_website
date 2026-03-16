@@ -382,6 +382,7 @@ export default function AboutSection() {
 
 
           {/* Learn More Cards */}
+          {/* 
           <div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <motion.h2
@@ -414,13 +415,11 @@ export default function AboutSection() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className={`relative flex flex-col h-full rounded-[48px] p-8 md:p-12 overflow-hidden ${card.bgColor} group min-h-[580px]`}
                   >
-                    {/* Card Header: Number and Line */}
                     <div className="mb-8">
                       <span className={`text-[15px] font-bold ${card.numberColor} block mb-6`}>{card.id}</span>
                       <div className={`h-[1px] w-full ${card.bgColor.includes('accent') ? 'bg-black/10' : 'bg-white/10'}`} />
                     </div>
 
-                    {/* Flex Content Container */}
                     <div className={`flex-1 flex flex-col ${card.contentPosition === 'bottom' ? 'justify-end pb-16' : 'justify-start pt-4'}`}>
                       <div className="relative z-10">
                         <h3 className={`text-[40px] md:text-[52px] font-bold mb-8 leading-[1.1] tracking-tight ${card.bgColor.includes('accent') ? 'text-black' : 'text-white'}`}>
@@ -435,7 +434,6 @@ export default function AboutSection() {
                       </div>
                     </div>
 
-                    {/* Image Section for Cards 02 & 03 (Aligned to Bottom) */}
                     {card.image && (
                       <div className="absolute bottom-0 right-0 w-[85%] h-[40%] overflow-hidden">
                         <img
@@ -446,18 +444,14 @@ export default function AboutSection() {
                       </div>
                     )}
 
-                    {/* Precise Notched Button Area */}
                     <div className="absolute bottom-0 right-0 z-20">
-                      {/* Visual Connector - Top */}
                       <div className="absolute top-[-48px] right-0 w-[48px] h-[48px] bg-white pointer-events-none">
                         <div className={`w-full h-full rounded-br-[48px] ${card.bgColor}`} />
                       </div>
-                      {/* Visual Connector - Left */}
                       <div className="absolute left-[-48px] bottom-0 w-[48px] h-[48px] bg-white pointer-events-none">
                         <div className={`w-full h-full rounded-br-[48px] ${card.bgColor}`} />
                       </div>
 
-                      {/* The Button Container (White square with rounded-tl) */}
                       <div className="w-[124px] h-[124px] bg-white rounded-tl-[48px] flex items-center justify-center pt-3 pl-3">
                         <div className={`w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg ${card.id === '01.' ? 'bg-primary text-white' : 'bg-accent text-navy'}`}>
                           <ArrowUpRight className="w-8 h-8" />
@@ -469,9 +463,10 @@ export default function AboutSection() {
               })}
             </div>
           </div>
+          */}
 
-        </div>
-      </div>
+        </div >
+      </div >
     </section >
   );
 }

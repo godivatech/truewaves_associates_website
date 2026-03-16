@@ -21,7 +21,7 @@ const footerLinks = {
 
 const socialLinks = [
     { name: 'Facebook', href: '#' },
-    { name: 'Instagram', href: '#' },
+    { name: 'Instagram', href: 'https://www.instagram.com/truewavesgroup/' },
     { name: 'Youtube', href: '#' },
     { name: 'Twitter', href: '#' },
 ];
