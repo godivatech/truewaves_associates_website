@@ -72,7 +72,7 @@ export default function AboutSection() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-dark leading-[1.05] tracking-tight mb-0 max-w-3xl"
                         >
-                            Your Premier Partner in Real Estate & Engineering Solutions
+                            Building Tomorrow with Architectural Excellence and Precision
                         </motion.h2>
 
 
