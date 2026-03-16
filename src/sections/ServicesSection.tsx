@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const services = [
     {
-        title: 'Real Estate Development',
+        title: 'Infrastructure Development',
         image: '/images/service-1.jpg',
     },
     {
@@ -11,11 +11,11 @@ const services = [
         image: '/images/service-2.jpg',
     },
     {
-        title: 'Investment & Capital',
+        title: 'Cost Management & Consulting',
         image: '/images/service-3.jpg',
     },
     {
-        title: 'Construction Management',
+        title: 'Building and Construction',
         image: '/images/service-4.jpg',
     },
     {
@@ -79,7 +79,7 @@ export default function ServicesSection() {
                             className="mb-6"
                         >
                             <span className="inline-flex items-center gap-2 px-4 py-2 border border-navy/20 rounded-full text-xs font-medium tracking-wider text-navy uppercase">
-                                WE OFFER <span className="text-accent">-</span> WHAT WE DO
+                                WHAT WE DO
                             </span>
                         </motion.div>
 

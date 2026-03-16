@@ -29,9 +29,9 @@ const services = [
     image: '/images/svc-4.jpg',
   },
   {
-    title: 'Main Construction',
+    title: 'Building and Construction',
     description:
-      'Structural framework, brickwork, roofing, electrical/plumbing/HVAC, and interior & exterior finishes.',
+      'Residential, Commercial & Government construction projects delivered with precision.',
     image: '/images/svc-5.jpg',
   },
   {
@@ -370,3 +370,5 @@ export default function ServicesSection() {
     </section>
   );
 }
+
+
