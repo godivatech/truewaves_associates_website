@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
 
 
 const footerLinks = {
@@ -24,6 +25,17 @@ const socialLinks = [
     { name: 'Instagram', href: 'https://www.instagram.com/truewavesgroup/' },
     { name: 'Youtube', href: '#' },
     { name: 'Twitter', href: '#' },
+];
+
+const offices = [
+    {
+        name: 'Madurai Office',
+        address: 'No. 5, North Street, Singarayar Colony, Narimedu, Madurai - 625002'
+    },
+    {
+        name: 'Chennai Office',
+        address: '27/5, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033'
+    }
 ];
 
 export default function Footer() {
@@ -90,41 +102,57 @@ export default function Footer() {
 
                         {/* Contact Info */}
                         <div className="md:col-span-4 lg:border-l lg:border-gray-200 lg:pl-10 flex flex-col justify-between">
-                            <div>
-                                <a
-                                    href="tel:04522535226"
-                                    className="block text-[28px] font-bold text-navy hover:text-accent transition-colors mb-4 border-b border-accent pb-2 inline-block max-w-max"
-                                >
-                                    0452 2535226
-                                </a>
-                                <a
-                                    href="mailto:info@truewavesgroup.com"
-                                    className="block text-[22px] font-bold text-navy hover:text-accent transition-colors mb-6 border-b border-accent pb-2 inline-block max-max"
-                                >
-                                    info@truewavesgroup.com
-                                </a>
-                                <p className="text-[15px] font-medium text-muted-foreground mb-10 max-w-xs leading-relaxed hidden">
-                                    {/* Address hidden here to match strictly the layout of Image 1 which had no address */}
-                                </p>
+                            <div className="space-y-8">
+                                <div>
+                                    <a
+                                        href="tel:04522535226"
+                                        className="block text-[28px] font-bold text-navy hover:text-accent transition-colors mb-2 border-b border-accent pb-1 inline-block max-w-max"
+                                    >
+                                        0452 2535226
+                                    </a>
+                                    <br />
+                                    <a
+                                        href="mailto:info@truewavesgroup.com"
+                                        className="block text-[20px] font-bold text-navy hover:text-accent transition-colors border-b border-accent pb-1 inline-block max-w-max"
+                                    >
+                                        info@truewavesgroup.com
+                                    </a>
+                                </div>
+
+                                {/* Addresses */}
+                                <div className="grid grid-cols-1 gap-6 mt-6">
+                                    {offices.map((office) => (
+                                        <div key={office.name} className="flex gap-3">
+                                            <MapPin className="w-5 h-5 text-accent shrink-0 mt-1" />
+                                            <div>
+                                                <h4 className="text-[16px] font-bold text-navy mb-1">{office.name}</h4>
+                                                <p className="text-[14px] text-muted-foreground leading-relaxed font-medium">
+                                                    {office.address}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
                             {/* Social Links */}
-                            <div className="flex items-center gap-3 text-sm font-bold text-muted-foreground">
+                            <div className="flex items-center gap-3 text-sm font-bold text-muted-foreground mt-8">
                                 {socialLinks.map((social, index) => (
                                     <div key={social.name} className="flex items-center gap-3">
                                         <a
                                             href={social.href}
-                                            className="hover:text-navy transition-colors"
+                                            className="hover:text-navy transition-colors font-bold"
                                             aria-label={social.name}
                                         >
                                             {social.name}
                                         </a>
-                                        {index < socialLinks.length - 1 && <span>•</span>}
+                                        {index < socialLinks.length - 1 && <span className="text-gray-300">•</span>}
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
+
 
                     <div className="w-full h-px bg-gray-200 mt-14 mb-8" />
 
