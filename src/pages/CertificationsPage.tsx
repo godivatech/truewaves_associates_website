@@ -81,9 +81,9 @@ export default function CertificationsPage() {
                       IEI ensures we stay at the forefront of engineering innovation and 
                       quality standards.
                     </p>
-                    <button className="px-8 py-4 bg-accent text-navy font-bold rounded-full hover:scale-105 transition-transform">
+                    {/* <button className="px-8 py-4 bg-accent text-navy font-bold rounded-full hover:scale-105 transition-transform">
                       View Quality Policy
-                    </button>
+                    </button> */}
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     {[

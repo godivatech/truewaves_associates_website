@@ -73,8 +73,8 @@ export default function DifferentSection() {
                     <div className="flex -space-x-2 mb-2">
                       {[1, 2, 3].map((i) => (
                         <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-gray-100">
-                          <img 
-                            src={`/images/avatar-${i}.png`} 
+                          <img
+                            src={`/images/avatar-${i}.png`}
                             alt={`Satisfied client ${i}`}
                             className="w-full h-full object-cover"
                           />

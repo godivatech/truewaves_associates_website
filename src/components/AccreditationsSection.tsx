@@ -53,7 +53,7 @@ export default function AccreditationsSection() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-4xl font-bold text-navy"
           >
-            Verified <span className="text-accent">Certifications</span>
+            Our <span className="text-accent">Certifications</span>
           </motion.h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             We are officially recognized by leading government and professional institutions, 
