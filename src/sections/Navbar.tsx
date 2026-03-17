@@ -8,6 +8,7 @@ const navLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Certifications', href: '/certifications' },
     // { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '/contact' },
 ];
@@ -82,13 +83,6 @@ export default function Navbar() {
 
                     {/* Right Side */}
                     <div className="hidden lg:flex items-center gap-6">
-                        <a
-                            href="tel:+919487525226"
-                            className="flex items-center gap-2 text-base text-navy hover:text-accent transition-colors"
-                        >
-                            <span className="text-muted-foreground">Call Us:</span>
-                            <span className="underline underline-offset-2">+(91) 9487525226</span>
-                        </a>
                         <button
                             className="px-6 py-2.5 bg-accent text-navy text-base font-bold rounded-full hover:opacity-90 transition-all transform hover:scale-105"
                         >
