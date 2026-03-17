@@ -65,7 +65,7 @@ export default function QualityHighlightsSection() {
             className="text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             These principles guide how we work with clients, build solutions, and
-            deliver outcomes—consistently and transparently.
+            deliver outcomes consistently and transparently.
           </motion.p>
         </div>
 

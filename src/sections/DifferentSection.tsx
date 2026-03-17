@@ -51,7 +51,7 @@ export default function DifferentSection() {
                 alt="Team collaboration"
                 className="w-full h-[500px] object-cover"
               />
-              
+
               {/* Rating Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -65,20 +65,23 @@ export default function DifferentSection() {
                   <div>
                     <div className="flex gap-1 mb-1">
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-accent text-accent" viewBox="0 0 20 20">
+                        <svg key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
                           <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                         </svg>
                       ))}
                     </div>
                     <div className="flex -space-x-2 mb-2">
                       {[1, 2, 3].map((i) => (
-                        <div
-                          key={i}
-                          className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/90 border-2 border-white"
-                        />
+                        <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-gray-100">
+                          <img 
+                            src={`/images/avatar-${i}.png`} 
+                            alt={`Satisfied client ${i}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       ))}
                     </div>
-                    <p className="text-white/80 text-sm">2k+ satisfied customers</p>
+                    <p className="text-white/80 text-sm">122+ satisfied clients</p>
                   </div>
                 </div>
               </motion.div>
@@ -136,7 +139,7 @@ export default function DifferentSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted-foreground mb-10"
             >
-              It's not just about creating something good; it's about designing, innovating, 
+              It's not just about creating something good; it's about designing, innovating,
               and collaborating to forge remarkable and unparalleled experiences.
             </motion.p>
 
