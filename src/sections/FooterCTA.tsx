@@ -35,9 +35,7 @@ export default function FooterCTA() {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6"
         >
-          Your dream
-          <br />
-          home awaits
+          Your next landmark awaits
         </motion.h2>
 
         <motion.p
@@ -47,8 +45,8 @@ export default function FooterCTA() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-lg text-white/80 mb-10 max-w-xl mx-auto"
         >
-          Whether you're exploring our homes or envisioning something custom,
-          we're here to bring your dream to life.
+          Whether you're exploring our expertise or envisioning a custom development,
+          we're here to bring your ambitious projects to life.
         </motion.p>
 
         <motion.div

@@ -90,10 +90,10 @@ export default function QualityHighlightsSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-navy mb-3 transition-colors duration-200 group-hover:text-accent">
+                <h3 className="text-2xl font-bold text-navy mb-4 transition-colors duration-200 group-hover:text-accent">
                   {title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed text-base">
                   {description}
                 </p>
               </div>
