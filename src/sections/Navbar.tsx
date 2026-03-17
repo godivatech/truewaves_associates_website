@@ -40,7 +40,7 @@ export default function Navbar() {
         >
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <nav
-                    className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 ${isScrolled
+                    className={`flex items-center justify-between px-6 py-3 rounded-3xl transition-all duration-300 ${isScrolled
                         ? 'bg-white/95 backdrop-blur-md shadow-lg border border-gray-100'
                         : 'bg-white shadow-md'
                         }`}

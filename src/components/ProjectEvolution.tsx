@@ -83,9 +83,13 @@ export default function ProjectEvolution() {
                       style={{ opacity, x }}
                       className="absolute inset-x-0 top-0"
                     >
-                      <div className="text-xs font-bold text-gray-400 mb-3 uppercase tracking-widest">{stage.year}</div>
-                      <h3 className="text-3xl font-bold text-gray-800 mb-6">{stage.label}</h3>
-                      <p className="text-lg text-gray-500 max-w-md font-light leading-relaxed">
+                      <div className="text-sm sm:text-base font-extrabold text-gray-600 mb-3 uppercase tracking-[0.25em]">
+                        {stage.year}
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5 tracking-tight">
+                        {stage.label}
+                      </h3>
+                      <p className="text-lg sm:text-xl text-gray-700 max-w-lg font-normal leading-relaxed">
                         {stage.description}
                       </p>
                     </motion.div>

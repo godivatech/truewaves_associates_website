@@ -5,6 +5,7 @@ import { ArrowUp } from 'lucide-react';
 import Navbar from './sections/Navbar';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
+import QualityHighlightsSection from './sections/QualityHighlightsSection';
 import ServicesSection from './sections/ServicesSection';
 import ProjectsSection from './sections/ProjectsSection';
 import DifferentSection from './sections/DifferentSection';
@@ -62,6 +63,7 @@ function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
+        <QualityHighlightsSection />
         <ServicesSection />
         <ProjectsSection />
         <DifferentSection />
