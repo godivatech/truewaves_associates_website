@@ -4,31 +4,31 @@ const certifications = [
   {
     title: "ISO 9001:2015",
     subtitle: "Quality Management System",
-    description: "Certified for maintaining international standards in construction and engineering services by TUV India.",
+    description: "Certified for international quality standards in engineering and construction by TUV India.",
     image: "/images/certificates/ISO 9001-2015 Certification – TUV India.png"
   },
   {
     title: "IEI Membership",
     subtitle: "Professional Engineering",
-    description: "Corporate member of the largest multi-disciplinary professional body of engineers in India.",
+    description: "Corporate member of the Institution of Engineers (India), the nation's leading professional body.",
     image: "/images/certificates/IEI Membership Certification.png"
   },
   {
     title: "MSME Registration",
     subtitle: "Udyam Certificate",
-    description: "Registered under Ministry of Micro, Small & Medium Enterprises, Government of India.",
+    description: "Officially registered as an MSME enterprise by the Government of India.",
     image: "/images/certificates/Udyam certificate.jpeg"
   },
   {
     title: "Contract Labour License",
     subtitle: "Government of Tamil Nadu",
-    description: "Registered certificate for contract labour under the Government of Tamil Nadu regulations.",
+    description: "Registered and licensed for contract labour services by the Government of Tamil Nadu.",
     image: "/images/certificates/Contract Labour Registration Certificate (Tamil Nadu).png"
   },
   {
     title: "Tamilnadu Icon Award",
     subtitle: "Industry Recognition",
-    description: "Recognized for excellence and contribution to the industry with the Tamilnadu Icon Award.",
+    description: "Winner of the Tamilnadu Icon Award for excellence in the engineering industry.",
     image: "/images/certificates/Tamilnadu icon awards.jpeg"
   }
 ];
@@ -53,11 +53,11 @@ export default function AccreditationsSection() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-4xl font-bold text-navy"
           >
-            Verified <span className="text-accent">Accreditations</span>
+            Verified <span className="text-accent">Certifications</span>
           </motion.h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Our company is recognized by leading governmental and professional institutions, 
-            ensuring the highest standards of safety and quality in every project.
+            We are officially recognized by leading government and professional institutions, 
+            ensuring the highest quality and safety standards in every project.
           </p>
         </div>
 

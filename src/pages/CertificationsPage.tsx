@@ -77,9 +77,9 @@ export default function CertificationsPage() {
                     </h2>
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
                       Every project we undertake is governed by strict quality control protocols 
-                      and ethical practices. Being a member of premier institutions like IEI 
-                      and IOV ensures we stay at the forefront of engineering innovation and 
-                      valuation standards.
+                      and ethical practices. Our adherence to ISO 9001:2015 and membership with 
+                      IEI ensures we stay at the forefront of engineering innovation and 
+                      quality standards.
                     </p>
                     <button className="px-8 py-4 bg-accent text-navy font-bold rounded-full hover:scale-105 transition-transform">
                       View Quality Policy
@@ -89,8 +89,8 @@ export default function CertificationsPage() {
                     {[
                       { label: "Compliance", value: "100%" },
                       { label: "Professionalism", value: "A+" },
-                      { label: "Validation", value: "Global" },
-                      { label: "Excellence", value: "Standard" }
+                      { label: "Industry Focus", value: "Global" },
+                      { label: "Success Rate", value: "98%" }
                     ].map((stat) => (
                       <div key={stat.label} className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
                         <div className="text-accent text-2xl font-bold mb-1">{stat.value}</div>
