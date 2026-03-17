@@ -198,29 +198,38 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="group relative h-[420px] rounded-3xl overflow-hidden cursor-pointer"
               >
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                {/* Background Image / Texture */}
+                <div className="absolute inset-0 bg-navy/90 z-0">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-700 ease-out"
                   />
-                  {/* Reveal arrow on hover */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                  <div className="absolute bottom-4 right-4 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent transition-colors duration-500">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-dark mb-3">{service.title}</h3>
-                  <div className="w-full h-px bg-gray-100 mb-4" />
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
+                {/* Dark Gradient Overlay for text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy w-full h-full via-navy/50 to-transparent z-10 opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+
+                {/* Number Indicator */}
+                <div className="absolute top-6 left-6 z-20">
+                  <span className="text-5xl font-black text-white/10 group-hover:text-accent/30 transition-colors duration-500 font-sans tracking-tighter">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                {/* Content aligned to bottom */}
+                <div className="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end">
+                  <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <h3 className="text-2xl font-bold text-white mb-4 shadow-sm">{service.title}</h3>
+                    
+                    <div className="h-px w-10 bg-accent mb-4 group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
+                    
+                    <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-sm leading-relaxed max-w-[280px]">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
