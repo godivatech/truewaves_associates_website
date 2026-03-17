@@ -55,7 +55,7 @@ export default function QualityHighlightsSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold tracking-tight text-navy mb-6"
           >
-            Quality you can feel in every delivery.
+            Quality you can feel in every delivery
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
