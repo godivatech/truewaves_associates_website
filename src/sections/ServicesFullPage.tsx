@@ -223,9 +223,9 @@ export default function ServicesSection() {
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end">
                   <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                     <h3 className="text-2xl font-bold text-white mb-4 shadow-sm">{service.title}</h3>
-                    
+
                     <div className="h-px w-10 bg-accent mb-4 group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
-                    
+
                     <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-sm leading-relaxed max-w-[280px]">
                       {service.description}
                     </p>
