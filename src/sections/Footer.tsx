@@ -108,7 +108,7 @@ export default function Footer() {
                                         href="tel:04522535226"
                                         className="block text-[28px] font-bold text-navy hover:text-accent transition-colors mb-2 border-b border-accent pb-1 inline-block max-w-max"
                                     >
-                                        0452 2535226
+                                        0452 - 2535226
                                     </a>
                                     <br />
                                     <a

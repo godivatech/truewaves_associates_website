@@ -12,7 +12,7 @@ const contactInfo = [
     icon: MapPin,
     title: 'Madurai Office',
     value: 'No. 5, North Street, Singarayar Colony, Narimedu, Madurai - 625002',
-    buttonText: '0452 2535226',
+    buttonText: '0452 - 2535226',
   },
   {
     icon: MapPin,
