@@ -59,7 +59,14 @@ export default function Footer() {
                                     alt="TrueWaves Logo"
                                     className="h-24 sm:h-32 w-auto object-contain"
                                 />
-                                <span className="text-xl sm:text-3xl font-extrabold text-navy tracking-tighter whitespace-nowrap">True Waves <span className="text-azure">Group</span></span>
+                                <div className="flex flex-col">
+                                    <span className="text-xl sm:text-3xl font-extrabold text-navy tracking-tighter whitespace-nowrap leading-none">
+                                        True Waves <span className="text-azure">Group</span>
+                                    </span>
+                                    <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-bold tracking-[0.2em] text-navy/40 uppercase mt-2">
+                                        TRUE STRENGTH - TRUE VISION - TRUE WAVES
+                                    </span>
+                                </div>
                             </a>
                             <div className="mt-12 sm:mt-16">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">

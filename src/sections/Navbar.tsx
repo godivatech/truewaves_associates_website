@@ -53,9 +53,14 @@ export default function Navbar() {
                             alt="TrueWaves Logo"
                             className="h-20 w-auto object-contain scale-125 origin-left"
                         />
-                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy ml-2 whitespace-nowrap">
-                            True Waves Group
-                        </span>
+                        <div className="flex flex-col ml-2">
+                            <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy whitespace-nowrap leading-none">
+                                True Waves Group
+                            </span>
+                            <span className="text-[7px] sm:text-[8px] lg:text-[10px] font-bold tracking-[0.15em] text-navy/40 uppercase mt-1">
+                                TRUE STRENGTH - TRUE VISION - TRUE WAVES
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Navigation */}
