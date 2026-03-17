@@ -53,7 +53,7 @@ export default function Navbar() {
                             alt="TrueWaves Logo"
                             className="h-20 w-auto object-contain scale-125 origin-left"
                         />
-                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy ml-2">
+                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy ml-2 whitespace-nowrap">
                             True Waves Group
                         </span>
                     </Link>

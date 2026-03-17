@@ -22,7 +22,7 @@ export default function FooterCTA() {
           transition={{ duration: 0.8 }}
           className="text-[15vw] font-bold text-white whitespace-nowrap"
         >
-          TrueWaves
+          True Waves
         </motion.span>
       </div>
 

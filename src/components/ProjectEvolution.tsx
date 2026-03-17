@@ -6,7 +6,7 @@ const EVOLUTION_STAGES = [
     image: '/images/chennai office images/before.png',
     label: 'The Foundation',
     year: '2024 Phase 01',
-    description: 'Our Chennai Headquarters at its raw stage. A vision for a collaborative workspace that embodies the TrueWaves spirit of engineering excellence.'
+    description: 'Our Chennai Headquarters at its raw stage. A vision for a collaborative workspace that embodies the True Waves spirit of engineering excellence.'
   },
   {
     image: '/images/chennai office images/after.png',
