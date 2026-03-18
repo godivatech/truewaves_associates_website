@@ -68,11 +68,11 @@ export default function HeroSection() {
                 >
                     <motion.h1
                         variants={itemVariants}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight max-w-4xl mx-auto"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-normal leading-tight max-w-4xl mx-auto"
                     >
                         True Waves
                         <br />
-                        Group of Companies
+                        Associates
                     </motion.h1>
 
                     <motion.p
