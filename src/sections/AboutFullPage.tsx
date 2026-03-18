@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowUpRight, Building2, CheckCircle } from 'lucide-react';
+import { Building2, CheckCircle } from 'lucide-react';
 import ProjectEvolution from '../components/ProjectEvolution';
 import MDMessageSection from '../components/MDMessageSection';
 import VisionMissionSection from '../components/VisionMissionSection';
