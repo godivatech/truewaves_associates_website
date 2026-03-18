@@ -11,7 +11,10 @@ const footerLinks = {
         { name: 'Core Values', href: '#' },
     ],
     column2: [
-        { name: 'Our Projects', href: '#projects' },
+        { name: 'Our Services', href: '#' },
+        { name: 'Commercial', href: '#' },
+        { name: 'Residential', href: '#' },
+        { name: 'Industrial', href: '#' },
         { name: 'News & Updates', href: '#' },
         { name: 'Terms & Conditions', href: '#' },
         { name: 'Support Center', href: '#' },
