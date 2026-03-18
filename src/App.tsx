@@ -65,8 +65,8 @@ function HomePage() {
         <HeroSection />
         <AboutSection />
         <QualityHighlightsSection />
-        <ServicesSection />
         <ProjectsSection />
+        <ServicesSection />
         <DifferentSection />
         <TestimonialsSection />
         <PartnersSection />

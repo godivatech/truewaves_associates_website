@@ -1,64 +1,80 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Building2, Kanban, BarChart4, Hammer, DraftingCompass } from 'lucide-react';
 
 const services = [
     {
         title: 'Infrastructure Development',
-        image: '/images/service-1.jpg',
+        description: 'Pioneering large-scale urban and civil infrastructure projects with precision and excellence.',
+        icon: Building2,
     },
     {
         title: 'Project Management',
-        image: '/images/service-2.jpg',
+        description: 'Streamlining complex workflows from conception to final delivery with expert oversight.',
+        icon: Kanban,
     },
     {
         title: 'Cost Management & Consulting',
-        image: '/images/service-3.jpg',
+        description: 'Optimizing resources and ensuring financial feasibility for projects of any scale.',
+        icon: BarChart4,
     },
     {
         title: 'Building and Construction',
-        image: '/images/service-4.jpg',
+        description: 'Delivering excellence in residential and commercial builds through sustainable practices.',
+        icon: Hammer,
     },
     {
         title: 'Architecture & Design',
-        image: '/images/service-5.jpg',
+        description: 'Creating visionary spaces that blend functionality with aesthetic brilliance.',
+        icon: DraftingCompass,
     },
 ];
 
 interface ServiceCardProps {
     title: string;
-    image: string;
+    description: string;
+    icon: any;
     index: number;
 }
 
-function ServiceCard({ title, image, index }: ServiceCardProps) {
+function ServiceCard({ title, description, icon: Icon, index }: ServiceCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative bg-white rounded-3xl overflow-hidden cursor-pointer"
+            className="group relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer hover:shadow-2xl hover:shadow-azure/10 transition-all duration-500 overflow-hidden"
         >
-            {/* Accent shape */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent rounded-bl-[100px] transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-right z-10" />
+            {/* Background Glow */}
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-azure/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* Accent shape (retained for character) */}
+            <div className="absolute top-0 right-0 w-24 h-24 bg-azure/10 rounded-bl-[80px] transform scale-100 group-hover:scale-110 transition-transform duration-500 origin-top-right z-0" />
 
-            {/* Arrow button */}
-            <div className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center z-20 shadow-md transform scale-100 group-hover:scale-110 transition-transform">
-                <ArrowUpRight className="w-5 h-5 text-navy" />
-            </div>
+            <div className="relative z-10 flex flex-col h-full">
+                {/* Icon Container */}
+                <div className="mb-8 relative">
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-azure group-hover:bg-azure group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-azure/30 group-hover:-translate-y-1">
+                        <Icon className="w-8 h-8" />
+                    </div>
+                </div>
 
-            {/* Image */}
-            <div className="relative h-64 overflow-hidden">
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-            </div>
+                {/* Arrow button */}
+                <div className="absolute top-0 right-0 w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-sm transform scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500">
+                    <ArrowUpRight className="w-5 h-5 text-navy" />
+                </div>
 
-            {/* Title */}
-            <div className="p-6">
-                <h3 className="text-lg font-semibold text-navy">{title}</h3>
+                {/* Content */}
+                <div className="mt-auto">
+                    <h3 className="text-xl font-bold text-navy mb-4 group-hover:text-azure transition-colors">{title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        {description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs font-bold text-azure uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        Learn More
+                        <div className="w-8 h-[1px] bg-azure" />
+                    </div>
+                </div>
             </div>
         </motion.div>
     );
@@ -107,24 +123,26 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.slice(0, 3).map((service, index) => (
                         <ServiceCard
                             key={service.title}
                             title={service.title}
-                            image={service.image}
+                            description={service.description}
+                            icon={service.icon}
                             index={index}
                         />
                     ))}
                 </div>
 
                 {/* Bottom Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-5xl mx-auto">
                     {services.slice(3).map((service, index) => (
                         <ServiceCard
                             key={service.title}
                             title={service.title}
-                            image={service.image}
+                            description={service.description}
+                            icon={service.icon}
                             index={index + 3}
                         />
                     ))}
