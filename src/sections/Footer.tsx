@@ -15,10 +15,6 @@ const footerLinks = {
         { name: 'Commercial', href: '#' },
         { name: 'Residential', href: '#' },
         { name: 'Industrial', href: '#' },
-        { name: 'News & Updates', href: '#' },
-        { name: 'Terms & Conditions', href: '#' },
-        { name: 'Support Center', href: '#' },
-        { name: 'Contact', href: '#contact' },
     ],
 };
 
@@ -49,7 +45,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="bg-white rounded-[2.5rem] p-8 lg:p-14 shadow-2xl"
+                    className="bg-white rounded-[2.5rem] p-8 lg:py-10 lg:px-14 shadow-2xl"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-0">
 
@@ -59,11 +55,11 @@ export default function Footer() {
                                 <img
                                     src="/images/Logo%202.png"
                                     alt="TrueWaves Logo"
-                                    className="h-56 sm:h-64 xl:h-72 w-auto object-contain transform scale-125 origin-left lg:-ml-3"
+                                    className="h-32 sm:h-40 xl:h-48 w-auto object-contain transform scale-110 origin-left lg:-ml-3"
                                 />
                             </a>
 
-                            <div className="mt-12 sm:mt-16">
+                            <div className="mt-6 sm:mt-8">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
                                     True Waves Group of Companies. Engaged with professional engineering and construction since 2008.
                                 </p>
@@ -138,7 +134,7 @@ export default function Footer() {
                             </div>
 
                             {/* Social Links */}
-                            <div className="flex items-center gap-3 text-sm font-bold text-muted-foreground mt-8">
+                            <div className="flex items-center gap-3 text-sm font-bold text-muted-foreground mt-4">
                                 {socialLinks.map((social, index) => (
                                     <div key={social.name} className="flex items-center gap-3">
                                         <a
@@ -155,7 +151,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="w-full h-px bg-gray-200 mt-14 mb-8" />
+                    <div className="w-full h-px bg-gray-200 mt-8 mb-8" />
 
                     {/* Copyright */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
