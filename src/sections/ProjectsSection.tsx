@@ -58,11 +58,9 @@ export default function ProjectsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12"
           >
-            Innovative
+            Innovative designs,
             <br />
-            designs, lasting
-            <br />
-            impressions
+            lasting impressions
           </motion.h2>
 
           {/* Project List */}

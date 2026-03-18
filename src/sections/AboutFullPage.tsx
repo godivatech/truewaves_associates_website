@@ -235,21 +235,6 @@ export default function AboutSection() {
                 leaves a lasting positive impact. Together, we strive to build structures
                 that stand the test of time and trust.
               </motion.p>
-              <motion.a
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                href="#team"
-                className="inline-flex items-center gap-3 self-start"
-              >
-                <span className="relative px-6 py-3 border border-navy/20 rounded-full text-sm font-medium text-navy pr-16">
-                  Meet The Team
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </span>
-              </motion.a>
             </div>
           </div>
 

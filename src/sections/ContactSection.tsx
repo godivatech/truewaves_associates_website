@@ -57,7 +57,7 @@ export default function ContactSection() {
 
           {/* Heading */}
           <h2 className="text-2xl sm:text-3xl font-bold text-navy text-center mb-8">
-            Get specialist advice for residential, commercial or property
+            Get specialist advice for residential and commercial
           </h2>
 
           {/* Form */}

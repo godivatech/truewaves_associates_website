@@ -11,7 +11,6 @@ import ProjectsSection from './sections/ProjectsSection';
 import DifferentSection from './sections/DifferentSection';
 import TestimonialsSection from './sections/TestimonialsSection';
 import PartnersSection from './sections/PartnersSection';
-import TeamSection from './sections/TeamSection';
 import ContactSection from './sections/ContactSection';
 import BlogSection from './sections/BlogSection';
 import UnifiedFooter from './sections/UnifiedFooter';
@@ -71,7 +70,6 @@ function HomePage() {
         <DifferentSection />
         <TestimonialsSection />
         <PartnersSection />
-        <TeamSection />
         <ContactSection />
         <BlogSection />
       </main>
