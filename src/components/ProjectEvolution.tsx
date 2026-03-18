@@ -1,13 +1,7 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const EVOLUTION_STAGES = [
-  {
-    image: '/images/chennai office images/before.png',
-    label: 'The Foundation',
-    year: '2024 Phase 01',
-    description: 'Our Chennai Headquarters at its raw stage. A vision for a collaborative workspace that embodies the True Waves spirit of engineering excellence.'
-  },
   {
     image: '/images/chennai office images/after.png',
     label: 'Structural Flow',
@@ -23,159 +17,120 @@ const EVOLUTION_STAGES = [
 ];
 
 export default function ProjectEvolution() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % EVOLUTION_STAGES.length);
+    }, 5000); // 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-  // Smoother progress for transitions
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  // Calculate opacities for each stage
-  const opacity0 = useTransform(smoothProgress, [0, 0.25, 0.35], [1, 1, 0]);
-  const opacity1 = useTransform(smoothProgress, [0.25, 0.35, 0.6, 0.7], [0, 1, 1, 0]);
-  const opacity2 = useTransform(smoothProgress, [0.6, 0.7, 1], [0, 1, 1]);
+  const currentStage = EVOLUTION_STAGES[activeIndex];
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-[#fafafa]">
-      {/* Sticky Content Wrapper */}
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
-
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-            {/* Left Content Column (Narrative) */}
-            <div className="relative h-[50vh] flex flex-col justify-center">
-              <header className="mb-8">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  className="inline-flex items-center gap-3 mb-6 text-accent text-[10px] font-black uppercase tracking-[0.5em]"
-                >
-                  <span className="w-8 h-[1px] bg-accent/30" />
-                  Our Headquarters
-                </motion.div>
-
-                <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-8">
-                  Workspace <br />
-                  <span className="text-accent italic font-light">Transformation.</span>
-                </h2>
-              </header>
-
-              {/* Dynamic Descriptions */}
-              <div className="relative flex-grow">
-                {EVOLUTION_STAGES.map((stage, index) => {
-                  const opacity = index === 0 ? opacity0 : index === 1 ? opacity1 : opacity2;
-                  const x = useTransform(smoothProgress,
-                    [index * 0.33, index * 0.33 + 0.1, index * 0.33 + 0.23, index * 0.33 + 0.33],
-                    [30, 0, 0, -30]
-                  );
-
-                  return (
-                    <motion.div
-                      key={index}
-                      style={{ opacity, x }}
-                      className="absolute inset-x-0 top-0"
-                    >
-                      <div className="text-sm sm:text-base font-extrabold text-gray-600 mb-3 uppercase tracking-[0.25em]">
-                        {stage.year}
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5 tracking-tight">
-                        {stage.label}
-                      </h3>
-                      <p className="text-lg sm:text-xl text-gray-700 max-w-lg font-normal leading-relaxed">
-                        {stage.description}
-                      </p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Progress dots at bottom of text col */}
-              <div className="mt-12 flex gap-4 mt-auto">
-                {EVOLUTION_STAGES.map((_, index) => {
-                  const width = useTransform(smoothProgress,
-                    [index * 0.33, index * 0.33 + 0.16, index * 0.33 + 0.33],
-                    ["12px", "32px", "12px"]
-                  );
-                  const opacity = useTransform(smoothProgress,
-                    [index * 0.33, index * 0.33 + 0.16, index * 0.33 + 0.33],
-                    [0.2, 1, 0.2]
-                  );
-                  return (
-                    <motion.div
-                      key={index}
-                      style={{ width, opacity }}
-                      className="h-1 bg-accent rounded-full"
-                    />
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Right Gallery Column (Portrait Images) */}
-            <div className="relative aspect-[4/5] w-full max-w-md mx-auto group">
-              {/* Background Glow */}
-              <div className="absolute -inset-4 bg-accent/5 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
-
-              {/* Image Frame */}
-              <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-200">
-                {EVOLUTION_STAGES.map((stage, index) => {
-                  const opacity = index === 0 ? opacity0 : index === 1 ? opacity1 : opacity2;
-                  const scale = useTransform(smoothProgress,
-                    [index * 0.33, index * 0.33 + 0.16, index * 0.33 + 0.33],
-                    [1.1, 1.02, 1.1]
-                  );
-
-                  return (
-                    <motion.div
-                      key={index}
-                      style={{ opacity }}
-                      className="absolute inset-0"
-                    >
-                      <motion.img
-                        src={stage.image}
-                        alt={stage.label}
-                        style={{ scale }}
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Gentle overlay for light theme legibility if needed */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Architectural Detail Markrs */}
+    <section className="py-24 lg:py-32 bg-[#fafafa] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+          
+          {/* Left Content Column (Narrative) */}
+          <div className="relative flex flex-col justify-center min-h-[400px]">
+            <header className="mb-12">
               <motion.div
-                style={{ opacity: opacity0 }}
-                className="absolute top-8 -right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-xl border border-gray-100 hidden lg:block"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-3 mb-6 text-accent text-[10px] font-black uppercase tracking-[0.5em]"
               >
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter mb-1">Status</div>
-                <div className="text-xs font-black text-gray-900 uppercase tracking-widest">Ground Zero</div>
+                <span className="w-8 h-[1px] bg-accent/30" />
+                Our Headquarters
               </motion.div>
+
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tighter leading-[0.9]"
+              >
+                Workspace <br />
+                <span className="text-accent italic font-light">Transformation.</span>
+              </motion.h2>
+            </header>
+
+            {/* Dynamic Descriptions */}
+            <div className="relative flex-grow min-h-[150px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="absolute inset-x-0 top-0"
+                >
+                  <div className="text-sm sm:text-base font-extrabold text-gray-600 mb-3 uppercase tracking-[0.25em]">
+                    {currentStage.year}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5 tracking-tight">
+                    {currentStage.label}
+                  </h3>
+                  <p className="text-lg sm:text-xl text-gray-700 max-w-lg font-normal leading-relaxed">
+                    {currentStage.description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
+            {/* Progress dots at bottom of text col */}
+            <div className="mt-8 flex gap-4">
+              {EVOLUTION_STAGES.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className="group relative h-4 flex items-center justify-center focus:outline-none"
+                  aria-label={`Go to stage ${index + 1}`}
+                >
+                  <motion.div
+                    animate={{ 
+                      width: activeIndex === index ? 48 : 16,
+                      backgroundColor: activeIndex === index ? '#0066cc' : '#d1d5db' // Custom accent or gray
+                    }}
+                    transition={{ duration: 0.4 }}
+                    className="h-1.5 rounded-full bg-accent"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          style={{ opacity: useTransform(smoothProgress, [0.95, 1], [1, 0]) }}
-          className="absolute bottom-12 right-12 hidden lg:flex flex-col items-end gap-3"
-        >
-          <div className="text-[10px] font-black text-gray-300 uppercase tracking-[0.4em] rotate-90 origin-right translate-x-12 mb-8">
-            Scroll to Experience
+          {/* Right Gallery Column (Portrait Images) */}
+          <div className="relative aspect-[4/5] w-full max-w-md mx-auto group">
+            {/* Background Glow */}
+            <div className="absolute -inset-4 bg-accent/5 blur-3xl rounded-full opacity-50 transition-opacity duration-1000" />
+
+            {/* Image Frame */}
+            <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-200">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeIndex}
+                  src={currentStage.image}
+                  alt={currentStage.label}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              {/* Gentle overlay for light theme legibility if needed */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+            </div>
           </div>
-          <div className="w-[1px] h-20 bg-gradient-to-b from-gray-200 to-accent" />
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );
 }
+
