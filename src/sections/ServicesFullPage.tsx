@@ -12,36 +12,42 @@ const services = [
     description:
       'Identifying client needs, site selection, feasibility studies, cost estimates, and getting necessary legal clearances.',
     image: '/images/svc-1.jpg',
+    icon: ClipboardList,
   },
   {
     title: 'Design Development',
     description:
       'Concept design creation, detailed architectural drawings, structural & MEP design, and client approvals.',
     image: '/images/svc-2.jpg',
+    icon: PencilRuler,
   },
   {
     title: 'Pre-Construction',
     description:
       'Finalizing documents, getting permits, preparing tender & bidding process, and selecting contractors.',
     image: '/images/svc-3.jpg',
+    icon: HardHat,
   },
   {
     title: 'Site Preparation',
     description:
       'Land clearing, temporary utilities, soil testing & excavation, and beginning foundation work.',
     image: '/images/svc-4.jpg',
+    icon: Tractor,
   },
   {
     title: 'Building and Construction',
     description:
       'Residential, Commercial & Government construction projects delivered with precision.',
     image: '/images/svc-5.jpg',
+    icon: Building2,
   },
   {
     title: 'Post-Construction & Handover',
     description:
       'Final inspections, client walkthrough, official handover with completion certificate, and maintenance support.',
     image: '/images/svc-6.jpg',
+    icon: Key,
   },
 ];
 
@@ -219,9 +225,9 @@ export default function ServicesSection() {
                   </span>
                 </div>
 
-                {/* Content aligned to bottom */}
                 <div className="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col justify-end">
                   <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <service.icon className="w-10 h-10 text-white mb-4 drop-shadow-md" strokeWidth={1.5} />
                     <h3 className="text-2xl font-bold text-white mb-4 shadow-sm">{service.title}</h3>
 
                     <div className="h-px w-10 bg-accent mb-4 group-hover:w-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100" />
