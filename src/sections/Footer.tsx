@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
-
 const footerLinks = {
     column1: [
         { name: 'About Us', href: '#' },
@@ -41,7 +40,6 @@ const offices = [
 export default function Footer() {
     return (
         <footer className="relative bg-navy px-4 sm:px-6 lg:px-8 pb-8 pt-12">
-            {/* Main Footer Card */}
             <div className="max-w-[1400px] mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -51,15 +49,17 @@ export default function Footer() {
                     className="bg-white rounded-[2.5rem] p-8 lg:p-14 shadow-2xl"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-0">
+
                         {/* Logo & Description */}
                         <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
-                            <a href="#" className="flex items-center">
+                            <a href="/" className="block">
                                 <img
                                     src="/images/Logo%202.png"
                                     alt="TrueWaves Logo"
-                                    className="h-64 sm:h-72 xl:h-80 w-auto object-contain transform scale-150 origin-left lg:-ml-4"
+                                    className="h-56 sm:h-64 xl:h-72 w-auto object-contain transform scale-125 origin-left lg:-ml-3"
                                 />
                             </a>
+
                             <div className="mt-12 sm:mt-16">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
                                     True Waves Group of Companies. Engaged with professional engineering and construction since 2008.
@@ -151,7 +151,6 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-
 
                     <div className="w-full h-px bg-gray-200 mt-14 mb-8" />
 
