@@ -80,11 +80,12 @@ export default function Navbar() {
 
                     {/* Right Side */}
                     <div className="hidden lg:flex items-center gap-6">
-                        <button
+                        <Link
+                            to="/contact"
                             className="px-6 py-2.5 bg-accent text-navy text-base font-bold rounded-full hover:opacity-90 transition-all transform hover:scale-105"
                         >
                             Get In Touch
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -128,11 +129,13 @@ export default function Navbar() {
                                     </div>
                                 ))}
                                 <div className="pt-4 border-t">
-                                    <button
-                                        className="w-full px-4 py-3 bg-accent text-navy text-center font-semibold rounded-lg"
+                                    <Link
+                                        to="/contact"
+                                        className="block w-full px-4 py-3 bg-accent text-navy text-center font-semibold rounded-lg"
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         Get In Touch
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
