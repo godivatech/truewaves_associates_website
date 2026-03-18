@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
+import { saveSubmission } from '@/lib/contact-service';
 
 const contactInfo = [
   {
@@ -23,6 +25,39 @@ const contactInfo = [
 ];
 
 export default function ContactFullPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    
+    try {
+      const result = await saveSubmission({
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        message: formData.message,
+      });
+
+      if (result.success) {
+        setStatus('success');
+        alert('Thank you for your message! We will contact you soon.');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      } else {
+        throw new Error('Firebase submission failed');
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus('error');
+      alert('There was an error sending your message. Please try again.');
+    }
+  };
+
   return (
     <div className="bg-white">
       {/* Header Section */}
@@ -107,38 +142,51 @@ export default function ContactFullPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-5xl font-bold text-navy mb-12">Leave a message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <input
                     type="text"
                     placeholder="First Name*"
-                    className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400"
+                    disabled={status === 'loading'}
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400 disabled:opacity-50"
                     required
                   />
                   <input
                     type="text"
                     placeholder="Last Name*"
-                    className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400"
+                    disabled={status === 'loading'}
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                    className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400 disabled:opacity-50"
                     required
                   />
                 </div>
                 <input
                   type="email"
                   placeholder="Email*"
-                  className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400"
+                  disabled={status === 'loading'}
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400 disabled:opacity-50"
                   required
                 />
                 <textarea
                   placeholder="Message..."
+                  disabled={status === 'loading'}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={6}
-                  className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400 resize-none"
+                  className="w-full px-6 py-4 bg-gray-50 rounded-[24px] border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-gray-400 resize-none disabled:opacity-50"
                   required
                 ></textarea>
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-4 px-4 py-4 bg-white border border-gray-200 rounded-full font-bold text-navy shadow-sm hover:border-accent transition-all pl-8"
+                  disabled={status === 'loading'}
+                  className="group inline-flex items-center gap-4 px-4 py-4 bg-white border border-gray-200 rounded-full font-bold text-navy shadow-sm hover:border-accent transition-all pl-8 disabled:opacity-50"
                 >
-                  Submit
+                  {status === 'loading' ? 'Submitting...' : 'Submit'}
                   <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>

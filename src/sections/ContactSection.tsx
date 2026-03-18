@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { saveSubmission } from '../lib/contact-service';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -9,11 +10,21 @@ export default function ContactSection() {
     phone: '',
     inquiry: '',
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    alert('Thank you for your inquiry! We will contact you soon.');
+    setLoading(true);
+    try {
+      await saveSubmission(formData);
+      alert('Thank you for your inquiry! We will contact you soon.');
+      setFormData({ name: '', email: '', phone: '', inquiry: '' });
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert('There was an error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,9 +68,10 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Your Name*"
                   required
+                  disabled={loading}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground disabled:opacity-50"
                 />
               </div>
               <div>
@@ -67,9 +79,10 @@ export default function ContactSection() {
                   type="email"
                   placeholder="Email*"
                   required
+                  disabled={loading}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground disabled:opacity-50"
                 />
               </div>
             </div>
@@ -80,16 +93,18 @@ export default function ContactSection() {
                   type="tel"
                   placeholder="Phone Number*"
                   required
+                  disabled={loading}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy placeholder:text-muted-foreground disabled:opacity-50"
                 />
               </div>
               <div>
                 <select
                   value={formData.inquiry}
+                  disabled={loading}
                   onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy"
+                  className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy disabled:opacity-50"
                 >
                   <option value="">You inquiry about...</option>
                   <option value="residential">Residential Property</option>
@@ -109,9 +124,10 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="group inline-flex items-center gap-3 px-6 py-3 bg-accent text-navy rounded-full font-medium hover:bg-accent/90 transition-colors"
+                disabled={loading}
+                className="group inline-flex items-center gap-3 px-6 py-3 bg-accent text-navy rounded-full font-medium hover:bg-accent/90 transition-colors disabled:opacity-50"
               >
-                Get A Call Back
+                {loading ? 'Sending...' : 'Get A Call Back'}
                 <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center transition-colors">
                   <ArrowRight className="w-4 h-4" />
                 </span>

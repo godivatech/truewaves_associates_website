@@ -22,6 +22,8 @@ import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import CertificationsPage from './pages/CertificationsPage';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboard from './pages/AdminDashboard';
 
 function ScrollToTopButton() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -98,6 +100,8 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/certifications" element={<CertificationsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
       <ScrollToTopButton />
     </BrowserRouter>
