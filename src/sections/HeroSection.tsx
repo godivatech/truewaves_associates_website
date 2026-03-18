@@ -59,7 +59,7 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 pb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-72 pb-20">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -70,11 +70,8 @@ export default function HeroSection() {
                         variants={itemVariants}
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-normal leading-tight max-w-4xl mx-auto"
                     >
-                        True Waves
-                        <br />
-                        Associates
+                        True Waves Associates
                     </motion.h1>
-
                     <motion.p
                         variants={itemVariants}
                         className="mt-6 text-xl text-white/80 max-w-2xl mx-auto"
