@@ -47,20 +47,12 @@ export default function Navbar() {
                         }`}
                 >
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2">
+                    <Link to="/" className="flex items-center mr-20 sm:mr-48 lg:mr-64">
                         <img
-                            src="/images/Logo.png"
+                            src="/images/Logo%202.png"
                             alt="TrueWaves Logo"
-                            className="h-20 w-auto object-contain scale-125 origin-left"
+                            className="h-20 w-auto object-contain scale-[3] sm:scale-[4.5] transform origin-left ml-2 sm:-ml-2 -translate-y-1 sm:-translate-y-2 lg:-translate-y-3"
                         />
-                        <div className="flex flex-col ml-2">
-                            <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-navy whitespace-nowrap leading-none">
-                                True Waves Group
-                            </span>
-                            <span className="text-[7px] sm:text-[8px] lg:text-[10px] font-bold tracking-[0.15em] text-navy/40 uppercase mt-1">
-                                TRUE STRENGTH - TRUE VISION - TRUE WAVES
-                            </span>
-                        </div>
                     </Link>
 
                     {/* Desktop Navigation */}

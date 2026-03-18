@@ -34,7 +34,7 @@ export default function CertificationsPage() {
             </motion.span>
           </div>
 
-          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-20">
+          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-32">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
               <motion.h1
                 initial={{ opacity: 0, x: -50 }}
@@ -42,7 +42,7 @@ export default function CertificationsPage() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.85]"
               >
-                Our <br /> Credentials
+                Our Credentials
               </motion.h1>
 
               <motion.div

@@ -53,20 +53,12 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-0">
                         {/* Logo & Description */}
                         <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
-                            <a href="#" className="flex items-center gap-2 sm:gap-4">
+                            <a href="#" className="flex items-center">
                                 <img
-                                    src="/images/Logo.png"
+                                    src="/images/Logo%202.png"
                                     alt="TrueWaves Logo"
-                                    className="h-24 sm:h-32 w-auto object-contain"
+                                    className="h-64 sm:h-72 xl:h-80 w-auto object-contain transform scale-150 origin-left lg:-ml-4"
                                 />
-                                <div className="flex flex-col">
-                                    <span className="text-xl sm:text-3xl font-extrabold text-navy tracking-tighter whitespace-nowrap leading-none">
-                                        True Waves <span className="text-azure">Group</span>
-                                    </span>
-                                    <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-bold tracking-[0.2em] text-navy/40 uppercase mt-2">
-                                        TRUE STRENGTH - TRUE VISION - TRUE WAVES
-                                    </span>
-                                </div>
                             </a>
                             <div className="mt-12 sm:mt-16">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
