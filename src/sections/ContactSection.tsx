@@ -107,9 +107,9 @@ export default function ContactSection() {
                   className="w-full px-4 py-3 bg-gray-50 rounded-xl border-0 focus:ring-2 focus:ring-accent text-navy disabled:opacity-50"
                 >
                   <option value="">You inquiry about...</option>
-                  <option value="residential">Residential Property</option>
-                  <option value="commercial">Commercial Property</option>
-                  <option value="investment">Investment</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="industrial">Industrial</option>
                   <option value="other">Other</option>
                 </select>
               </div>

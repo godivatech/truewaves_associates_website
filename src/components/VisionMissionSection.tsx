@@ -22,9 +22,9 @@ const content = [
 
 export default function VisionMissionSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Structural lines decoration */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
+    <section className="py-24 lg:py-32 bg-[#fafafa] relative overflow-hidden">
+      {/* Structural lines decoration for light theme */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute top-0 left-1/4 w-px h-full bg-navy" />
         <div className="absolute top-0 left-2/4 w-px h-full bg-navy" />
         <div className="absolute top-0 left-3/4 w-px h-full bg-navy" />
@@ -48,18 +48,20 @@ export default function VisionMissionSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-px bg-accent" />
-                    <span className="text-accent font-bold tracking-[0.2em] text-sm uppercase">
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="text-accent text-xs sm:text-sm font-black uppercase tracking-[0.5em]">
                       {item.label}
                     </span>
                   </div>
                   
-                  <h3 className="text-5xl lg:text-6xl font-bold text-navy mb-8 tracking-tight">
-                    {item.title}
+                  <h3 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 tracking-tighter leading-[0.9]">
+                    {item.title.split(' ')[0]} <br />
+                    <span className="text-accent italic font-light">
+                      {item.title.split(' ')[1]}
+                    </span>
                   </h3>
                   
-                  <p className="text-xl lg:text-2xl text-navy/70 leading-relaxed font-light mb-10">
+                  <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-normal mb-10 max-w-2xl">
                     {item.description}
                   </p>
 

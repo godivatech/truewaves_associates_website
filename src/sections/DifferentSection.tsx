@@ -154,12 +154,12 @@ export default function DifferentSection() {
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   className="flex gap-4 pb-6 border-b border-border last:border-0"
                 >
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-navy" />
+                  <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-navy" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-navy mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-xl font-semibold text-navy mb-1 tracking-tight">{feature.title}</h3>
+                    <p className="text-base text-muted-foreground tracking-tight">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

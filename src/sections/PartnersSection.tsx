@@ -43,24 +43,24 @@ export default function PartnersSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center"
+          className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-20 lg:gap-x-24 gap-y-12"
         >
           {partners.map((partner, index) => {
             const isThiagarajar = partner.name.includes('Thiagarajar');
             const isMetro = partner.name.includes('Chennai Metro');
             
-            let containerClasses = 'h-24 md:h-32';
-            let imgClasses = 'max-h-[85%] max-w-[90%]';
+            let containerClasses = 'h-20 md:h-24';
+            let imgClasses = 'max-h-full max-w-[140px] md:max-w-[180px]';
             let motionClasses = 'scale-100 group-hover:scale-110';
 
             if (isThiagarajar) {
-              containerClasses = 'h-32 md:h-64 lg:h-80';
-              imgClasses = 'max-h-full max-w-full';
-              motionClasses = 'scale-110 md:scale-[1.7] lg:scale-[2.0] group-hover:scale-125 md:group-hover:scale-[1.8] lg:group-hover:scale-[2.2]';
+              containerClasses = 'h-24 md:h-28';
+              imgClasses = 'max-h-full max-w-[200px] md:max-w-[280px]';
+              motionClasses = 'scale-110 md:scale-[1.3] lg:scale-[1.4] group-hover:scale-125 md:group-hover:scale-[1.4] lg:group-hover:scale-[1.5]';
             } else if (isMetro) {
-              containerClasses = 'h-28 md:h-48 lg:h-56';
-              imgClasses = 'max-h-full max-w-full';
-              motionClasses = 'scale-105 md:scale-[1.3] lg:scale-[1.5] group-hover:scale-115 md:group-hover:scale-[1.4] lg:group-hover:scale-[1.65]';
+              containerClasses = 'h-20 md:h-24';
+              imgClasses = 'max-h-full max-w-[180px] md:max-w-[240px]';
+              motionClasses = 'scale-105 md:scale-[1.1] lg:scale-[1.2] group-hover:scale-115 md:group-hover:scale-[1.2] lg:group-hover:scale-[1.3]';
             }
 
             return (
@@ -70,7 +70,7 @@ export default function PartnersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`group relative flex items-center justify-center w-full ${containerClasses}`}
+                className={`group relative flex items-center justify-center shrink-0 ${containerClasses}`}
               >
                 <img
                   src={partner.src}
