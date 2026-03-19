@@ -61,7 +61,7 @@ export default function Footer() {
 
                             <div className="mt-6 sm:mt-8">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
-                                    True Waves Associates. Engaged with professional engineering and construction since 2008.
+                                    True Waves Associates, part of the True Waves Group. Engaged with professional engineering and construction since 2008.
                                 </p>
                             </div>
                         </div>
@@ -156,7 +156,7 @@ export default function Footer() {
                     {/* Copyright */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
                         <p className="text-[15px] text-muted-foreground font-medium">
-                            © 2026 <span className="text-navy font-bold">True Waves Associates</span>. All Rights Reserved.
+                            © 2026 <span className="text-navy font-bold">True Waves Associates</span> (True Waves Group). All Rights Reserved.
                         </p>
                         <span className="hidden sm:inline text-muted-foreground">•</span>
                         <p className="text-[15px] text-muted-foreground font-medium">
