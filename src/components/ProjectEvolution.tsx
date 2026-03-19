@@ -40,7 +40,7 @@ export default function ProjectEvolution() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-3 mb-6 text-accent text-[10px] font-black uppercase tracking-[0.5em]"
+                className="inline-flex items-center gap-3 mb-6 text-accent text-xs sm:text-sm font-black uppercase tracking-[0.5em]"
               >
                 <span className="w-8 h-[1px] bg-accent/30" />
                 Our Headquarters
