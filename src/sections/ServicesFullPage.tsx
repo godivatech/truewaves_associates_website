@@ -220,7 +220,7 @@ export default function ServicesSection() {
 
                 {/* Number Indicator */}
                 <div className="absolute top-6 left-6 z-20">
-                  <span className="text-5xl font-black text-white/10 group-hover:text-accent/30 transition-colors duration-500 font-sans tracking-tighter">
+                  <span className="text-6xl font-black text-white/20 group-hover:text-accent/40 transition-colors duration-500 font-sans tracking-tighter">
                     0{index + 1}
                   </span>
                 </div>
