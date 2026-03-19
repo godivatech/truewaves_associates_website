@@ -46,7 +46,7 @@ export default function QualityHighlightsSection() {
             viewport={{ once: true }}
             className="text-sm font-semibold tracking-wider text-accent uppercase mb-4"
           >
-            What we stand for
+            WHAT WE STAND FOR
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function QualityHighlightsSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold tracking-tight text-navy mb-6"
           >
-            Quality you can feel in every delivery
+            Quality You Can Feel in Every Delivery
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

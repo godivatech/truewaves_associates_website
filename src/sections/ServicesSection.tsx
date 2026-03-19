@@ -106,7 +106,7 @@ export default function ServicesSection() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight"
                         >
-                            Take a brief look at some of the services we offer
+                            Take a Brief Look at Some of the Services We Offer
                         </motion.h2>
                     </div>
 

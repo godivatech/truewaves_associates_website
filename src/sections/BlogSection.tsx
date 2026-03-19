@@ -90,9 +90,9 @@ export default function BlogSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy"
             >
-              Discover inspiration
+              Discover Inspiration
               <br />
-              and trends
+              and Trends
             </motion.h2>
           </div>
 

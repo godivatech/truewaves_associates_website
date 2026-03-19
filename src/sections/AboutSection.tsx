@@ -39,9 +39,9 @@ function AnimatedCounter({ target, suffix = '', duration = 2000, suffixClassName
 }
 
 const stats = [
-    { label: 'EXPERIENCE', sublabel: 'years in industry', value: 18, suffix: '+' },
-    { label: 'COMPLETED', sublabel: 'projects delivered', value: 122, suffix: '+' },
-    { label: 'ONGOING', sublabel: 'active projects', value: 9, suffix: '+' },
+    { label: 'EXPERIENCE', sublabel: 'Years in Industry', value: 18, suffix: '+' },
+    { label: 'COMPLETED', sublabel: 'Projects Delivered', value: 122, suffix: '+' },
+    { label: 'ONGOING', sublabel: 'Active Projects', value: 9, suffix: '+' },
 ];
 
 export default function AboutSection() {
@@ -115,7 +115,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
                             >
-                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[0].label}</h4>
+                                <h4 className="text-[13px] font-bold tracking-[0.15em] text-dark uppercase">{stats[0].label}</h4>
                                 <hr className="w-full border-dark/10 my-4" />
                                 <div className="mt-auto">
                                     <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">
@@ -133,7 +133,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.5, delay: 0.4 }}
                                 className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
                             >
-                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[1].label}</h4>
+                                <h4 className="text-[13px] font-bold tracking-[0.15em] text-dark uppercase">{stats[1].label}</h4>
                                 <hr className="w-full border-dark/10 my-4" />
                                 <div className="mt-auto">
                                     <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">
@@ -151,7 +151,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.5, delay: 0.5 }}
                                 className="bg-[#f7f7f7] rounded-[2rem] p-8 flex flex-col min-h-[250px] sm:min-h-[280px]"
                             >
-                                <h4 className="text-[10px] font-bold tracking-[0.15em] text-dark uppercase">{stats[2].label}</h4>
+                                <h4 className="text-[13px] font-bold tracking-[0.15em] text-dark uppercase">{stats[2].label}</h4>
                                 <hr className="w-full border-dark/10 my-4" />
                                 <div className="mt-auto">
                                     <div className="text-6xl lg:text-[5rem] font-bold tracking-tighter text-dark mb-1 leading-none">

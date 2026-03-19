@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
               </defs>
               <text className="text-[7px] fill-navy uppercase tracking-widest">
                 <textPath href="#testimonialCircle">
-                  WHAT PEOPLE SAYS • WHAT PEOPLE SAYS •
+                  WHAT PEOPLE SAY • WHAT PEOPLE SAY •
                 </textPath>
               </text>
             </svg>

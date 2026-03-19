@@ -81,7 +81,7 @@ export default function DifferentSection() {
                         </div>
                       ))}
                     </div>
-                    <p className="text-white/80 text-sm">122+ satisfied clients</p>
+                    <p className="text-white/80 text-sm">122+ Satisfied Clients</p>
                   </div>
                 </div>
               </motion.div>
@@ -105,7 +105,7 @@ export default function DifferentSection() {
                   </defs>
                   <text className="text-[8px] fill-navy uppercase tracking-widest">
                     <textPath href="#circlePath">
-                      WHAT PEOPLE SAYS • WHAT PEOPLE SAYS •
+                      WHAT PEOPLE SAY • WHAT PEOPLE SAY •
                     </textPath>
                   </text>
                 </svg>
@@ -129,7 +129,7 @@ export default function DifferentSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-6"
             >
-              What makes us different
+              What Makes Us Different
             </motion.h2>
 
             <motion.p

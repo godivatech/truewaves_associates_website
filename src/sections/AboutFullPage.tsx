@@ -75,7 +75,7 @@ const timelineData = [
 const infoCards = [
   {
     id: '01.',
-    title: 'What we do',
+    title: 'What We Do',
     description: 'We maintain this by ensuring transparency and professional conduct in every aspect.',
     link: 'Our Solutions',
     bgColor: 'bg-navy',
@@ -86,7 +86,7 @@ const infoCards = [
   },
   {
     id: '02.',
-    title: 'Our impact',
+    title: 'Our Impact',
     description: 'We work with both investors and developers to create landmarks that make an impact.',
     link: 'See Projects',
     bgColor: 'bg-primary', // Ocean Blue
@@ -98,7 +98,7 @@ const infoCards = [
   },
   {
     id: '03.',
-    title: 'Core values',
+    title: 'Core Values',
     description: 'To deliver superior civil engineering and construction services with uncompromising quality and architectural excellence.',
     link: 'Discover More',
     bgColor: 'bg-accent',
@@ -263,7 +263,7 @@ export default function AboutSection() {
                   <Building2 className="w-6 h-6 text-navy" />
                 </div>
               </div>
-              <p className="text-sm text-gray-500 font-medium">Years of experience</p>
+              <p className="text-sm text-gray-500 font-medium">Years of Experience</p>
             </div>
 
             {/* Floating Stats: top-right (Sq.Ft. Covered) */}
@@ -289,7 +289,7 @@ export default function AboutSection() {
                   <Building2 className="w-6 h-6 text-navy" />
                 </div>
               </div>
-              <p className="text-sm text-gray-500 font-medium font-medium">Completed projects</p>
+              <p className="text-sm text-gray-500 font-medium font-medium">Completed Projects</p>
             </div>
 
             {/* Stats: bottom-right (Clients) */}
@@ -302,7 +302,7 @@ export default function AboutSection() {
                   <CheckCircle className="w-6 h-6 text-navy" />
                 </div>
               </div>
-              <p className="text-sm text-gray-500 font-medium">Happy clients</p>
+              <p className="text-sm text-gray-500 font-medium">Happy Clients</p>
             </div>
           </motion.div>
         </div> {/* End of Upper Content max-w-7xl container */}
@@ -327,7 +327,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl lg:text-5xl font-bold text-dark"
               >
-                18+ years of an<br />incredible journey
+                18+ Years of an<br />Incredible Journey
               </motion.h2>
             </div>
 

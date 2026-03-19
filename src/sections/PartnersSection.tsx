@@ -21,7 +21,7 @@ export default function PartnersSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-xs font-medium tracking-wider text-muted-foreground uppercase mb-12"
         >
-          We're proud to partner with best-in-class clients
+          We're Proud to Partner With Best-in-Class Clients
         </motion.p>
 
         {/* Partners Grid */}
