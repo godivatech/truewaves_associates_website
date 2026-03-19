@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, ChevronDown } from 'lucide-react';
+import { MapPin, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -60,12 +60,55 @@ const projects: Project[] = [
     status: 'COMPLETED',
     image: '/images/Projects/TVS emerold Lakshore infra, chennai.jpeg',
   },
+  {
+    title: 'Corporation Office Building',
+    category: 'Institutional',
+    location: 'Nagercoil',
+    status: 'COMPLETED',
+    image: '/images/Projects/Corporation office building,  nagercoil.png',
+  },
+  {
+    title: 'Lotus Shopping Centre',
+    category: 'Commercial',
+    location: 'Madurai',
+    status: 'COMPLETED',
+    image: '/images/Projects/Lotus shopping centre, madurai.png',
+  },
+  {
+    title: 'RSM Tower Commercial Building',
+    category: 'Commercial',
+    location: 'Trichy',
+    status: 'COMPLETED',
+    image: '/images/Projects/RSM tower commercial building, Trichy.png',
+  },
+  {
+    title: 'Thiagarajar College of Engineering',
+    category: 'Institutional',
+    location: 'Madurai',
+    status: 'COMPLETED',
+    image: '/images/Projects/Thiagarajar college of engineering, madurai.png',
+  },
+  {
+    title: 'Campion School Church',
+    category: 'Institutional',
+    location: 'Trichy',
+    status: 'COMPLETED',
+    image: '/images/Projects/campion school church, trichy.png',
+  },
+  {
+    title: 'Mahatma School',
+    category: 'Institutional',
+    location: 'KK Nagar, Madurai',
+    status: 'COMPLETED',
+    image: '/images/Projects/mahatma School KK nagar, Madurai.png',
+  },
 ];
+
 
 const filterOptions = [
   { key: 'status', label: 'Project Status', options: ['All', 'Completed', 'Under Construction'] },
-  { key: 'category', label: 'Category', options: ['All', 'Infrastructure', 'Institutional'] },
-  { key: 'location', label: 'Location', options: ['All', 'Chennai', 'Kudankulam'] },
+  { key: 'category', label: 'Category', options: ['All', 'Infrastructure', 'Institutional', 'Commercial'] },
+  { key: 'location', label: 'Location', options: ['All', 'Chennai', 'Kudankulam', 'Madurai', 'Trichy', 'Nagercoil'] },
 ] as const;
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -76,6 +119,8 @@ export default function ProjectsSection() {
     category: 'All',
     location: 'All',
   });
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   const filteredProjects = projects.filter((project) => {
     if (filters.status !== 'All' && project.status.toLowerCase() !== filters.status.toLowerCase())
@@ -86,6 +131,12 @@ export default function ProjectsSection() {
       return false;
     return true;
   });
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <section id="projects" className="bg-white">
@@ -162,9 +213,10 @@ export default function ProjectsSection() {
                   aria-label={filter.label}
                   className="appearance-none bg-gray-50 px-6 py-3 pr-10 rounded-full text-sm text-dark focus:outline-none focus:ring-2 focus:ring-accent transition-colors cursor-pointer"
                   value={filters[filter.key]}
-                  onChange={(e) =>
-                    setFilters((prev) => ({ ...prev, [filter.key]: e.target.value }))
-                  }
+                  onChange={(e) => {
+                    setFilters((prev) => ({ ...prev, [filter.key]: e.target.value }));
+                    setCurrentPage(1);
+                  }}
                 >
                   {filter.options.map((opt) => (
                     <option key={opt} value={opt}>
@@ -176,7 +228,10 @@ export default function ProjectsSection() {
               </div>
             ))}
             <button
-              onClick={() => setFilters({ status: 'All', category: 'All', location: 'All' })}
+              onClick={() => {
+                setFilters({ status: 'All', category: 'All', location: 'All' });
+                setCurrentPage(1);
+              }}
               className="px-8 py-3 bg-accent text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-colors shadow-lg shadow-accent/10"
             >
               Reset
@@ -190,7 +245,7 @@ export default function ProjectsSection() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.map((project, index) => (
+              {paginatedProjects.map((project, index) => (
                 <motion.div
                   key={`${project.title}-${index}`}
                   initial={{ opacity: 0, y: 30 }}
@@ -232,6 +287,47 @@ export default function ProjectsSection() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          )}
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4 mt-16 pb-8">
+              <button
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-dark font-medium transition-colors hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Previous Page"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span className="hidden sm:inline">Previous</span>
+              </button>
+              
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalPages }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentPage(i + 1)}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-colors ${
+                      currentPage === i + 1 
+                        ? 'bg-accent text-navy' 
+                        : 'border border-gray-200 text-dark hover:bg-gray-50'
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-dark font-medium transition-colors hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Next Page"
+              >
+                <span className="hidden sm:inline">Next</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
           )}
 

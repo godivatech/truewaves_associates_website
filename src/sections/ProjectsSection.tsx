@@ -27,6 +27,54 @@ const projects = [
     title: 'MGR University',
     image: '/images/Projects/MGR university, Chennai.jpeg',
   },
+  {
+    number: '05',
+    location: 'Nagercoil, Tamil Nadu',
+    title: 'Corporation Office Building',
+    image: '/images/Projects/Corporation office building,  nagercoil.png',
+  },
+  {
+    number: '06',
+    location: 'Madurai, Tamil Nadu',
+    title: 'Lotus Shopping Centre',
+    image: '/images/Projects/Lotus shopping centre, madurai.png',
+  },
+  {
+    number: '07',
+    location: 'Trichy, Tamil Nadu',
+    title: 'RSM Tower Commercial Building',
+    image: '/images/Projects/RSM tower commercial building, Trichy.png',
+  },
+  {
+    number: '08',
+    location: 'Madurai, Tamil Nadu',
+    title: 'Thiagarajar College',
+    image: '/images/Projects/Thiagarajar college of engineering, madurai.png',
+  },
+  {
+    number: '09',
+    location: 'Trichy, Tamil Nadu',
+    title: 'Campion School Church',
+    image: '/images/Projects/campion school church, trichy.png',
+  },
+  {
+    number: '10',
+    location: 'Madurai, Tamil Nadu',
+    title: 'Mahatma School',
+    image: '/images/Projects/mahatma School KK nagar, Madurai.png',
+  },
+  {
+    number: '11',
+    location: 'Madurai, Tamil Nadu',
+    title: 'Thiagarajar College of Engineering',
+    image: '/images/Projects/Thiagarajar college of engineering, madurai.png',
+  },
+  {
+    number: '12',
+    location: 'Chennai, Tamil Nadu',
+    title: 'Fitness Center',
+    image: '/images/Projects/Fitness center kamarajar university, chennai.png',
+  },
 ];
 
 export default function ProjectsSection() {
@@ -65,7 +113,7 @@ export default function ProjectsSection() {
 
           {/* Project List */}
           <div className="space-y-6">
-            {projects.map((project, index) => (
+            {projects.slice(0, 6).map((project, index) => (
               <motion.div
                 key={project.number}
                 initial={{ opacity: 0, x: -30 }}
@@ -100,6 +148,20 @@ export default function ProjectsSection() {
                 )}
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="pt-8 mt-4"
+            >
+              <a 
+                href="/projects" 
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-navy text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-all duration-300 shadow-lg rounded-full"
+              >
+                View All Projects
+              </a>
+            </motion.div>
           </div>
         </div>
 
