@@ -58,7 +58,7 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className="inline-flex items-center gap-3 px-6 py-2.5 border border-[#daf552] rounded-full text-[10px] font-bold tracking-[0.2em] text-dark uppercase">
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 border border-[#daf552] rounded-full text-sm font-bold tracking-[0.2em] text-dark uppercase">
                                 WHO WE ARE
                             </span>
                         </motion.div>

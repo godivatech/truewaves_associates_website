@@ -71,7 +71,7 @@ export default function HeroSection() {
                         className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-secondary/30 bg-white/10 backdrop-blur-md mb-8 group cursor-default transition-all duration-300 hover:border-secondary/60 hover:bg-white/15"
                     >
                         <div className="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_10px_#3ABEF9] animate-pulse" />
-                        <span className="text-secondary text-[10px] sm:text-[11px] font-black uppercase tracking-[0.3em] leading-none">
+                        <span className="text-secondary text-[12px] sm:text-[13px] font-black uppercase tracking-[0.15em] leading-none">
                             The Construction Powerhouse of True Waves Group
                         </span>
                         <div className="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_10px_#3ABEF9] animate-pulse" />

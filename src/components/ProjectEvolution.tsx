@@ -54,7 +54,7 @@ export default function ProjectEvolution() {
                 className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tighter leading-[0.9]"
               >
                 Workspace <br />
-                <span className="text-accent italic font-light">Transformation.</span>
+                <span className="text-accent italic font-light">Transformation</span>
               </motion.h2>
             </header>
 
