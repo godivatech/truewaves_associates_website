@@ -77,8 +77,26 @@ const projects = [
   },
 ];
 
+const locations = ['All', 'Chennai', 'Madurai', 'Trichy', 'Others'];
+
+const extractCity = (loc: string) => {
+  const l = loc.toLowerCase();
+  if (l.includes('chennai')) return 'Chennai';
+  if (l.includes('madurai')) return 'Madurai';
+  if (l.includes('trichy')) return 'Trichy';
+  return 'Others';
+};
+
 export default function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState(0);
+  const [activeLocation, setActiveLocation] = useState('All');
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const filteredProjects = projects.filter(project => {
+    if (activeLocation === 'All') return true;
+    return extractCity(project.location) === activeLocation;
+  });
+
+  const displayedProjects = filteredProjects.slice(0, 6);
 
   return (
     <section id="projects" className="relative min-h-screen bg-navy">
@@ -104,50 +122,78 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8"
           >
             Innovative Designs,
             <br />
             Lasting Impressions
           </motion.h2>
 
+          {/* Location Filters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex flex-wrap gap-2 mb-8"
+          >
+            {locations.map((loc) => (
+              <button
+                key={loc}
+                onClick={() => {
+                  setActiveLocation(loc);
+                  setActiveIndex(0);
+                }}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeLocation === loc 
+                    ? 'bg-accent text-navy' 
+                    : 'bg-white/10 text-white hover:bg-white/20'
+                }`}
+              >
+                {loc}
+              </button>
+            ))}
+          </motion.div>
+
           {/* Project List */}
           <div className="space-y-6">
-            {projects.slice(0, 6).map((project, index) => (
+            {displayedProjects.length > 0 ? displayedProjects.map((project, index) => (
               <motion.div
                 key={project.number}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`cursor-pointer transition-all duration-300 ${activeProject === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
+                className={`cursor-pointer transition-all duration-300 ${activeIndex === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                   }`}
-                onClick={() => setActiveProject(index)}
+                onClick={() => setActiveIndex(index)}
               >
-                <div className="flex items-start gap-4">
-                  <span className={`text-5xl font-bold ${activeProject === index ? 'text-white' : 'text-white/30'
-                    }`}>
-                    {project.number}
-                  </span>
-                  <div className="pt-2">
+                <div className="relative pl-6 py-1">
+                  {/* Vertical Accent Bar */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: activeIndex === index ? '100%' : '20%',
+                      opacity: activeIndex === index ? 1 : 0.2,
+                    }}
+                    className={`absolute left-0 top-0 w-0.5 rounded-full transition-colors duration-300 ${activeIndex === index ? 'bg-accent' : 'bg-white'
+                      }`}
+                  />
+                  <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2 text-white/60 text-sm mb-1">
                       <MapPin className="w-4 h-4" />
                       {project.location}
                     </div>
-                    <h3 className={`text-xl font-semibold transition-colors ${activeProject === index ? 'text-white' : 'text-white/60'
+                    <h3 className={`text-xl font-semibold transition-colors ${activeIndex === index ? 'text-white' : 'text-white/60'
                       }`}>
                       {project.title}
                     </h3>
                   </div>
                 </div>
-                {activeProject === index && (
-                  <motion.div
-                    layoutId="activeLine"
-                    className="h-px bg-white/30 mt-4 ml-16"
-                  />
-                )}
               </motion.div>
-            ))}
+            )) : (
+              <div className="text-white/60 py-4">No projects found for {activeLocation}.</div>
+            )}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,18 +213,20 @@ export default function ProjectsSection() {
 
         {/* Right Panel - Project Images */}
         <div className="relative h-96 lg:h-auto overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={activeProject}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.5 }}
-              src={projects[activeProject].image}
-              alt={projects[activeProject].title}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </AnimatePresence>
+          {displayedProjects.length > 0 && (
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={displayedProjects[activeIndex]?.title || activeIndex}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+                src={displayedProjects[activeIndex]?.image}
+                alt={displayedProjects[activeIndex]?.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </AnimatePresence>
+          )}
 
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-transparent to-transparent lg:hidden" />
