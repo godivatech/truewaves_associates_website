@@ -69,9 +69,6 @@ export default function ProjectEvolution() {
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   className="absolute inset-x-0 top-0"
                 >
-                  <div className="text-sm sm:text-base font-extrabold text-gray-600 mb-3 uppercase tracking-[0.25em]">
-                    {currentStage.year}
-                  </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-5 tracking-tight">
                     {currentStage.label}
                   </h3>
