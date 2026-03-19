@@ -6,7 +6,7 @@ import { saveSubmission } from '@/lib/contact-service';
 const contactInfo = [
   {
     icon: Mail,
-    title: 'Support email',
+    title: 'Support Email',
     value: 'info@truewavesgroup.com',
     buttonText: 'Email Us',
   },
@@ -99,7 +99,7 @@ export default function ContactFullPage() {
               <span className="text-white">Contact</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-              Contact us
+              Contact Us
             </h1>
             <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
               Have questions or ready to start your next project? We're here to help you navigate your real estate and construction needs.
@@ -141,7 +141,7 @@ export default function ContactFullPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-5xl font-bold text-navy mb-12">Leave a message</h2>
+              <h2 className="text-5xl font-bold text-navy mb-12">Leave a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <input
