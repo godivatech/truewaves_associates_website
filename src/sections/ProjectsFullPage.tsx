@@ -252,7 +252,7 @@ export default function ProjectsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative rounded-3xl overflow-hidden cursor-pointer"
+                  className="group relative rounded-3xl overflow-hidden"
                 >
                   <div className="aspect-[4/5] relative">
                     <img
@@ -302,17 +302,16 @@ export default function ProjectsSection() {
                 <ChevronLeft className="w-4 h-4" />
                 <span className="hidden sm:inline">Previous</span>
               </button>
-              
+
               <div className="flex items-center gap-2">
                 {Array.from({ length: totalPages }).map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentPage(i + 1)}
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-colors ${
-                      currentPage === i + 1 
-                        ? 'bg-accent text-navy' 
-                        : 'border border-gray-200 text-dark hover:bg-gray-50'
-                    }`}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-colors ${currentPage === i + 1
+                      ? 'bg-accent text-navy'
+                      : 'border border-gray-200 text-dark hover:bg-gray-50'
+                      }`}
                   >
                     {i + 1}
                   </button>

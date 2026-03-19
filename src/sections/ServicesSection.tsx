@@ -47,7 +47,7 @@ function ServiceCard({ title, description, icon: Icon, index }: ServiceCardProps
         >
             {/* Background Glow */}
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-azure/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+
             {/* Accent shape (retained for character) */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-azure/10 rounded-bl-[80px] transform scale-100 group-hover:scale-110 transition-transform duration-500 origin-top-right z-0" />
 

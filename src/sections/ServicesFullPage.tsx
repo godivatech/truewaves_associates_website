@@ -204,7 +204,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative h-[420px] rounded-3xl overflow-hidden cursor-pointer"
+                className="group relative h-[420px] rounded-3xl overflow-hidden"
               >
                 {/* Background Image / Texture */}
                 <div className="absolute inset-0 bg-navy/90 z-0">

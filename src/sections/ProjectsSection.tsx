@@ -144,11 +144,10 @@ export default function ProjectsSection() {
                   setActiveLocation(loc);
                   setActiveIndex(0);
                 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeLocation === loc 
-                    ? 'bg-accent text-navy' 
-                    : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeLocation === loc
+                  ? 'bg-accent text-navy'
+                  : 'bg-white/10 text-white hover:bg-white/20'
+                  }`}
               >
                 {loc}
               </button>
@@ -201,8 +200,8 @@ export default function ProjectsSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="pt-8 mt-4"
             >
-              <a 
-                href="/projects" 
+              <a
+                href="/projects"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-navy text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-all duration-300 shadow-lg rounded-full"
               >
                 View All Projects
