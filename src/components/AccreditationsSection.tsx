@@ -8,24 +8,6 @@ const certifications = [
     image: "/images/certificates/ISO 9001-2015 Certification – TUV India.png"
   },
   {
-    title: "IEI Membership",
-    subtitle: "Professional Engineering",
-    description: "Corporate member of the Institution of Engineers (India), the nation's leading professional body.",
-    image: "/images/certificates/IEI Membership Certification.png"
-  },
-  {
-    title: "MSME Registration",
-    subtitle: "Udyam Certificate",
-    description: "Officially registered as an MSME enterprise by the Government of India.",
-    image: "/images/certificates/Udyam certificate.jpeg"
-  },
-  {
-    title: "Contract Labour License",
-    subtitle: "Government of Tamil Nadu",
-    description: "Registered and licensed for contract labour services by the Government of Tamil Nadu.",
-    image: "/images/certificates/Contract Labour Registration Certificate (Tamil Nadu).png"
-  },
-  {
     title: "Tamilnadu Icon Award",
     subtitle: "Industry Recognition",
     description: "Winner of the Tamilnadu Icon Award for excellence in the engineering industry.",
@@ -61,7 +43,7 @@ export default function AccreditationsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {certifications.map((item, index) => (
             <motion.div
               key={item.title}
