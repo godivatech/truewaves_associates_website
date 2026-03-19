@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -122,6 +122,16 @@ export default function ProjectsSection() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
+  // Scroll to top of section when page changes
+  useEffect(() => {
+    const projectsSection = document.getElementById('projects-grid-start');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentPage]);
+
   const filteredProjects = projects.filter((project) => {
     if (filters.status !== 'All' && project.status.toLowerCase() !== filters.status.toLowerCase())
       return false;
@@ -205,6 +215,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            id="projects-grid-start"
             className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-100 relative"
           >
             {filterOptions.map((filter) => (
