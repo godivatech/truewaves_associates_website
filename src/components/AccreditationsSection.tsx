@@ -12,6 +12,48 @@ const certifications = [
     subtitle: "Industry Recognition",
     description: "Winner of the Tamilnadu Icon Award for excellence in the engineering industry.",
     image: "/images/certificates/Tamilnadu icon awards.jpeg"
+  },
+  {
+    title: "Badminton Tournament Organizer Award",
+    subtitle: "Sportsmanship & Service",
+    description: "Recognized for successfully organizing a state-level badminton tournament for civil engineers, promoting sportsmanship and professional unity.",
+    image: "/images/certificates/new/Badminton Tournament Organizer Award.jpeg"
+  },
+  {
+    title: "State-Level Cricket Tournament",
+    subtitle: "Teamwork & Excellence",
+    description: "Awarded by AMCE for securing runner-up position in the FACEAT state-level cricket tournament, showcasing teamwork and competitive excellence.",
+    image: "/images/certificates/new/State-Level Cricket Tournament.jpeg"
+  },
+  {
+    title: "Hunger Relief Achievement Award",
+    subtitle: "Community Service",
+    description: "Awarded by the International Association of Lions Clubs for exceptional contribution to hunger relief initiatives and dedicated community service.",
+    image: "/images/certificates/new/Hunger Relief Achievement Award.jpeg"
+  },
+  {
+    title: "BMC State Conference 2025",
+    subtitle: "Leadership Recognition",
+    description: "Recognized as a Chief Guest at the BMC State Conference 2025, highlighting leadership excellence and active contribution to the professional community.",
+    image: "/images/certificates/new/BMC State Conference 2025 – Chief Guest Recognition.jpeg"
+  },
+  {
+    title: "Youth Development Recognition",
+    subtitle: "Social Progress",
+    description: "Presented in Madurai in recognition of impactful contributions to youth development and community service, honoring leadership and commitment.",
+    image: "/images/certificates/new/Youth Leadership & Social Contribution Award (2025).jpeg"
+  },
+  {
+    title: "MPC Productivity Week 2026",
+    subtitle: "Industry Engagement",
+    description: "Recognized as a Silver Sponsor at MPC Productivity Week 2026, highlighting contribution to initiatives aimed at enhancing growth within the MSME sector.",
+    image: "/images/certificates/new/MPC Productivity Week 2026 – Recognition Award (Silver Sponsor).jpeg"
+  },
+  {
+    title: "Court Building Inauguration",
+    subtitle: "Public Infrastructure",
+    description: "This commemorative recognition was awarded during the inauguration of the new court building and judicial quarters at Ilayangudi, reflecting professional credibility.",
+    image: "/images/certificates/new/Court Building Inauguration Recognition.jpeg"
   }
 ];
 
@@ -43,7 +85,7 @@ export default function AccreditationsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {certifications.map((item, index) => (
             <motion.div
               key={item.title}
