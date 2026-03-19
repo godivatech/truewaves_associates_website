@@ -20,9 +20,9 @@ export default function FooterCTA() {
           whileInView={{ opacity: 0.1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-[15vw] font-bold text-white whitespace-nowrap"
+          className="text-[12vw] sm:text-[10vw] lg:text-[8vw] font-bold text-white whitespace-nowrap"
         >
-          True Waves
+          True Waves Associates
         </motion.span>
       </div>
 
