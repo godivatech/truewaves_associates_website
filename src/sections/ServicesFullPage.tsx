@@ -2,7 +2,7 @@
 import { addMinutes } from 'date-fns';
 import { motion } from 'framer-motion';
 // @ts-ignore
-import { ClipboardList, PencilRuler, HardHat, Tractor, Building2, Key, ArrowUpRight } from 'lucide-react';
+import { ClipboardList, PencilRuler, FileSignature, Shovel, Building2, Key, ArrowUpRight } from 'lucide-react';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -26,14 +26,14 @@ const services = [
     description:
       'Finalizing documents, getting permits, preparing tender & bidding process, and selecting contractors.',
     image: '/images/svc-3.jpg',
-    icon: HardHat,
+    icon: FileSignature,
   },
   {
     title: 'Site Preparation',
     description:
       'Land clearing, temporary utilities, soil testing & excavation, and beginning foundation work.',
     image: '/images/svc-4.jpg',
-    icon: Tractor,
+    icon: Shovel,
   },
   {
     title: 'Building and Construction',
@@ -72,7 +72,7 @@ const processSteps = [
   { 
     id: 3, 
     title: 'PRE-CONSTRUCTION', 
-    icon: HardHat, 
+    icon: FileSignature, 
     points: ['Finalizing construction documents', 'Getting permits & statutory approvals', 'Preparing tender & bidding process', 'Selecting contractors & suppliers'],
     x: 750, 
     y: 450 
@@ -80,7 +80,7 @@ const processSteps = [
   { 
     id: 4, 
     title: 'SITE PREPARATION', 
-    icon: Tractor, 
+    icon: Shovel, 
     points: ['Land clearing & levelling', 'Temporary utilities & site office setup', 'Soil testing & excavation', 'Foundation work begins'],
     x: 250, 
     y: 450 
