@@ -55,7 +55,7 @@ export default function Footer() {
                                 <img
                                     src="/images/Logo%202.png"
                                     alt="TrueWaves Logo"
-                                    className="h-28 sm:h-32 xl:h-36 w-auto object-contain transform scale-[2.5] origin-top-left -translate-y-32 lg:-ml-3"
+                                    className="h-28 sm:h-32 xl:h-36 w-auto object-contain transform scale-[2.5] origin-top-left -translate-y-12 md:-translate-y-16 lg:-translate-y-32 lg:-ml-3"
                                 />
                             </a>
 
