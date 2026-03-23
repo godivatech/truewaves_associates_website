@@ -50,16 +50,16 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-0">
 
                         {/* Logo & Description */}
-                        <div className="md:col-span-4 flex flex-col justify-between lg:pr-10">
+                        <div className="md:col-span-4 flex flex-col justify-start lg:pr-10">
                             <a href="/" className="block">
                                 <img
                                     src="/images/Logo%202.png"
                                     alt="TrueWaves Logo"
-                                    className="h-44 sm:h-52 xl:h-60 w-auto object-contain transform scale-120 origin-left lg:-ml-3"
+                                    className="h-28 sm:h-32 xl:h-36 w-auto object-contain transform scale-[2.5] origin-top-left -translate-y-32 lg:-ml-3"
                                 />
                             </a>
 
-                            <div className="mt-6 sm:mt-8">
+                            <div className="mt-16 sm:mt-20">
                                 <p className="text-[15px] text-muted-foreground leading-relaxed font-medium md:max-w-xs">
                                     True Waves Associates, part of the True Waves Group. Engaged with professional engineering and construction since 2008.
                                 </p>

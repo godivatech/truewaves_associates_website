@@ -14,28 +14,10 @@ const certifications = [
     image: "/images/certificates/Tamilnadu icon awards.jpeg"
   },
   {
-    title: "Badminton Tournament Organizer Award",
-    subtitle: "Sportsmanship & Service",
-    description: "Recognized for successfully organizing a state-level badminton tournament for civil engineers, promoting sportsmanship and professional unity.",
-    image: "/images/certificates/new/Badminton Tournament Organizer Award.jpeg"
-  },
-  {
-    title: "State-Level Cricket Tournament",
-    subtitle: "Teamwork & Excellence",
-    description: "Awarded by AMCE for securing runner-up position in the FACEAT state-level cricket tournament, showcasing teamwork and competitive excellence.",
-    image: "/images/certificates/new/State-Level Cricket Tournament.jpeg"
-  },
-  {
     title: "Hunger Relief Achievement Award",
     subtitle: "Community Service",
     description: "Awarded by the International Association of Lions Clubs for exceptional contribution to hunger relief initiatives and dedicated community service.",
     image: "/images/certificates/new/Hunger Relief Achievement Award.jpeg"
-  },
-  {
-    title: "BMC State Conference 2025",
-    subtitle: "Leadership Recognition",
-    description: "Recognized as a Chief Guest at the BMC State Conference 2025, highlighting leadership excellence and active contribution to the professional community.",
-    image: "/images/certificates/new/BMC State Conference 2025 – Chief Guest Recognition.jpeg"
   },
   {
     title: "Youth Development Recognition",

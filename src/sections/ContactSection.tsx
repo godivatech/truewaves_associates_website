@@ -116,7 +116,7 @@ export default function ContactSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 We're excited to connect with you!
                 <br />
                 Required fields are marked *
