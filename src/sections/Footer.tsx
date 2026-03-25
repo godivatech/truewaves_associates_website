@@ -32,7 +32,7 @@ const offices = [
     },
     {
         name: 'Chennai Office',
-        address: '27/5, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033'
+        address: '17-13, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033'
     }
 ];
 

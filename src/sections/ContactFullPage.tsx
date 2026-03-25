@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Chennai Office',
-    value: '27/5, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033',
+    value: '17-13, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033',
     buttonText: '044 - 45837877',
   },
 ];
@@ -36,7 +36,7 @@ export default function ContactFullPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    
+
     try {
       const result = await saveSubmission({
         name: `${formData.firstName} ${formData.lastName}`.trim(),
