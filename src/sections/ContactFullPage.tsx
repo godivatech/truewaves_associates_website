@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Chennai Office',
-    value: '17-13, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033',
+    value: '17/13, Easwaran Koil Street, Vellai thottam, West Mambalam, Chennai - 600033',
     buttonText: '044 - 45837877',
   },
 ];
