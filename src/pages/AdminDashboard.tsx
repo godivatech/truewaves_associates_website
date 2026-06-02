@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  LogOut, 
-  Search, 
-  Trash2, 
-  CheckCircle, 
-  Mail, 
-  Phone, 
+import {
+  LogOut,
+  Search,
+  Trash2,
+  CheckCircle,
+  Mail,
+  Phone,
   Calendar,
   Eye,
   X,
@@ -15,11 +15,11 @@ import {
   Info,
   RefreshCw
 } from 'lucide-react';
-import { 
-  getSubmissions, 
-  updateSubmissionStatus, 
-  deleteSubmission, 
-  type ContactSubmission 
+import {
+  getSubmissions,
+  updateSubmissionStatus,
+  deleteSubmission,
+  type ContactSubmission
 } from '../lib/contact-service';
 
 export default function AdminDashboard() {
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
     }
   };
 
-  const filteredSubmissions = submissions.filter(s => 
+  const filteredSubmissions = submissions.filter(s =>
     s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     s.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     s.message?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
         </nav>
 
         <div className="p-6 border-t border-white/10">
-          <button 
+          <button
             onClick={handleLogout}
             className="w-full flex items-center gap-3 p-4 text-white/60 hover:text-white hover:bg-white/5 rounded-2xl transition-all"
           >
@@ -138,7 +138,7 @@ export default function AdminDashboard() {
                 className="pl-12 pr-6 py-3 bg-gray-50 rounded-full border-none focus:ring-2 focus:ring-accent w-full sm:w-80 text-sm"
               />
             </div>
-            <button 
+            <button
               onClick={loadSubmissions}
               disabled={loading}
               className="p-3 bg-gray-50 rounded-full hover:bg-gray-100 transition-all disabled:opacity-50"
@@ -196,7 +196,7 @@ export default function AdminDashboard() {
                     </tr>
                   ) : filteredSubmissions.length > 0 ? (
                     filteredSubmissions.map((submission) => (
-                      <tr 
+                      <tr
                         key={submission.id}
                         onClick={() => setSelectedSubmission(submission)}
                         className={`hover:bg-accent/5 transition-colors cursor-pointer group ${submission.status === 'new' ? 'bg-white font-medium' : 'bg-white/50'}`}
@@ -211,17 +211,16 @@ export default function AdminDashboard() {
                           {submission.email}
                         </td>
                         <td className="px-6 py-5">
-                          <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                            submission.status === 'new' ? 'bg-navy text-white' :
-                            submission.status === 'read' ? 'bg-blue-100 text-blue-600' :
-                            'bg-green-100 text-green-600'
-                          }`}>
+                          <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${submission.status === 'new' ? 'bg-navy text-white' :
+                              submission.status === 'read' ? 'bg-blue-100 text-blue-600' :
+                                'bg-green-100 text-green-600'
+                            }`}>
                             {submission.status}
                           </span>
                         </td>
                         <td className="px-6 py-5 text-right">
                           <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button 
+                            <button
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleStatusChange(submission.id, 'contacted');
@@ -231,7 +230,7 @@ export default function AdminDashboard() {
                             >
                               <CheckCircle className="w-4 h-4" />
                             </button>
-                            <button 
+                            <button
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleDelete(submission.id);
@@ -277,7 +276,7 @@ export default function AdminDashboard() {
               className="relative w-full max-w-2xl bg-white rounded-[40px] shadow-2xl overflow-hidden"
             >
               <div className="absolute top-6 right-6">
-                <button 
+                <button
                   onClick={() => setSelectedSubmission(null)}
                   className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                 >
